@@ -7,7 +7,7 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  margin: auto;
 `
 
 const Footer = styled.div`
@@ -18,6 +18,7 @@ const Footer = styled.div`
 `
 
 const UpperSection = styled.div`
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
