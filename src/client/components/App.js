@@ -15,6 +15,7 @@ const Footer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  background-color: ${props => props.theme.brandColor};
 `
 
 const UpperSection = styled.div`
@@ -32,6 +33,7 @@ const Benefits = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  padding: 2rem;
   background-color: ${props => props.theme.primaryColor};
 `
 
@@ -52,6 +54,7 @@ const Presentation = styled.div`
 `
 
 const ContactSection = styled.div`
+  padding: 2rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -82,6 +85,10 @@ const StyledForm = styled.form`
 
 const BenefitImage = styled.img`
   width: 150px;
+`
+
+const FooterLink = styled.div`
+
 `
 
 
@@ -135,10 +142,10 @@ export default () => (
         </form>
       </ContactSection>
       <Footer>
-        <h3>LohnBot.ai</h3>
-        <h3>How it works</h3>
-        <h3>Pricing</h3>
-        <h3>Contact</h3>
+        <FooterLink><h3>LohnBot.ai</h3></FooterLink>
+        <FooterLink><h3>How it works</h3></FooterLink>
+        <FooterLink><h3>Pricing</h3></FooterLink>
+        <FooterLink><h3>Contact</h3></FooterLink>
       </Footer>
   </Root>
 )
