@@ -89,4 +89,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
+#Public Folder with All Files
+public/
+
 # End of https://www.gitignore.io/api/osx,node
