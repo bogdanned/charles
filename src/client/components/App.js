@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import ConversationBox from './ConversationBox'
+import {compose, withHandlers} from "recompose"
 
 
 const Root = styled.div`
@@ -70,6 +72,11 @@ const Logo = styled.img`
   padding: 0.25rem;
 `
 
+const StyledInput = styled.input`
+  height: 40px;
+  width: 600px;
+`
+
 const Statement = styled.div`
   display: flex;
   flex-direction: column;
@@ -82,7 +89,7 @@ const AiForm = styled.div`
   align-items: center;
 `
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -112,8 +119,14 @@ const LogoText = styled.h3`
 const Name = styled.h3`
   font-weight: 700;
 `
+const ChatContainer = styled.div`
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`
 
-export default () => (
+const App =  ({sendMessage}) => (
   <Root>
       <UpperSection>
         <LogoBox>
@@ -124,12 +137,15 @@ export default () => (
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
           <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
         </Statement>
-        <AiForm>
-          <StyledForm>
-            <input type = "text" placeholder="Tell me about your bathroom, When was is last renovated, How big is it …"/>
-            <button type="submit">Send</button>
-          </StyledForm>
-        </AiForm>
+        <ChatContainer>
+          <ConversationBox/>
+          <AiForm>
+            <StyledForm>
+              <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
+              <button onClick={sendMessage} type="submit">Send</button>
+            </StyledForm>
+          </AiForm>
+        </ChatContainer>
       </UpperSection>
       <Benefits>
         <Benefit>
@@ -171,3 +187,12 @@ export default () => (
       </Footer>
   </Root>
 )
+
+
+export default compose(
+  withHandlers({
+    sendMessage: props => event => {
+      props.updateValue(event.target.value)
+    }
+  })
+)(App)
