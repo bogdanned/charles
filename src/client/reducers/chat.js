@@ -1,6 +1,5 @@
 const initialState = {
   sentMessages: [],
-  inputValue: ""
 }
 
 
@@ -9,13 +8,7 @@ export default function(state=initialState, action) {
     case "SEND_MESSAGE":
       return {
         ...state,
-        sentMessages: state.sentMessages.concat([state.inputValue]),
-        inputValue: ""
-      }
-    case "SET_INPUT_FIELD_VALUE":
-      return {
-        ...state,
-        inputValue: action.payload
+        sentMessages: state.sentMessages.concat([action.payload.inputChat]),
       }
     default:
       return state
