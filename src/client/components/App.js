@@ -191,8 +191,8 @@ const App =  ({sendMessage}) => (
 
 export default compose(
   withHandlers({
-    sendMessage: props => event => {
-      props.updateValue(event.target.value)
+    sendMessage: ({dispatch}) => () => {
+      dispatch()
     }
   })
 )(App)
