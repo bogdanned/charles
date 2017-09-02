@@ -141,7 +141,7 @@ const StyledH3 = styled.h3`
   color: ${props => props.theme.primaryColor}
 `
 
-const App =  ({sendMessage}) => (
+const App =  ({sendMessage, handleChange}) => (
   <Root>
       <UpperSection>
         <LogoBox>
@@ -156,8 +156,8 @@ const App =  ({sendMessage}) => (
           <ConversationBox/>
           <AiForm>
             <StyledForm>
-              <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-              <button onClick={(e) => sendMessage(e.target.value)} type="submit">Send</button>
+              <StyledInput onChange={e => handleChange(e.target.value)} type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
+              <button onClick={e => sendMessage(e.target.value)} type="submit">Send</button>
             </StyledForm>
           </AiForm>
         </ChatContainer>
@@ -208,8 +208,10 @@ export default compose(
   connect(),
   withHandlers({
     sendMessage: ({dispatch}) => (value) => {
-      console.log(value, 'e')
       dispatch(actions.sendMessage(value))
+    },
+    handleChange: ({dispatch}) => (value) => {
+      dispatch(actions.setInputFieldValue(value))
     }
   })
 )(App)
