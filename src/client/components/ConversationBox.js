@@ -103,7 +103,7 @@ export default compose(
   })),
   withHandlers({
     onSubmit: ({dispatch}) => (values, _dispatch, props) => {
-      dispatch(actions.sendMessage(values))
+      dispatch(actions.fetchReplyMessage(values))
       props.reset()
     }
   }),
