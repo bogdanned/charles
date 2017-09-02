@@ -3,22 +3,24 @@ import styled from 'styled-components'
 
 
 const Root = styled.div`
-
-`
-
-const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
-const Footer = styled.div`
 
+const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 const UpperSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 80vh;
+  background-color: white;
 `
 
 const Benefits = styled.div`
@@ -29,6 +31,7 @@ const Benefits = styled.div`
 const Benefit = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 `
 
 const Presentation = styled.div`
@@ -65,11 +68,8 @@ const StyledForm = styled.form`
   flex-direction: column;
 `
 
-
-
 export default () => (
   <Root>
-    <Body>
       <UpperSection>
         <Logo>
           <h1>Magnus.ai</h1>
@@ -80,23 +80,23 @@ export default () => (
         </Statement>
         <AiForm>
           <StyledForm>
-            <input type = "text" />
+            <input type = "text" placeholder="Tell me about your bathroom, When was is last renovated, How big is it …"/>
             <button type="submit">Send</button>
           </StyledForm>
         </AiForm>
       </UpperSection>
       <Benefits>
         <Benefit>
-          <img href="" />
-          <p>Does your bathroom need a renovation or repair?</p>
+          <img src="http://www.freepik.com/free-vector/bathroom-background-design_1076708.html"/>
+          <p><strong>Does your bathroom need a renovation or repair?</strong></p>
         </Benefit>
         <Benefit>
-          <img href="" />
-          <p>Message me with your bath related doubts</p>
+          <img src="http://www.freepik.com/free-vector/white-with-red-and-blue-lines-envelope-design_850231.html"/>
+          <p><strong>Message me with your bath related doubts</strong></p>
         </Benefit>
         <Benefit>
-          <img href="" />
-          <p>Get indications and quotes from Magnus</p>
+          <img src="http://www.freepik.com/free-vector/construction-worker-avatar-design_909450.htm"/>
+          <p><strong>Get indications and quotes from Magnus</strong></p>
         </Benefit>
       </Benefits>
       <Presentation>
@@ -113,11 +113,15 @@ export default () => (
         <h1>Your personal bathroom planner</h1>
         <h3>Juts tell me your bathroom doubts and concerns</h3>
         <form>
-          <input type = "text" palceholder={"Enter your email"}/>
+          <input type ="text" placeholder="Enter your email" name="email"/>
           <button type="submit">Sign up</button>
         </form>
       </ContactSection>
-    </Body>
-    <Footer></Footer>
+      <Footer>
+        <h3>magnus.ai</h3>
+        <h3>How it works</h3>
+        <h3>Pricing</h3>
+        <h3>Contact</h3>
+      </Footer>
   </Root>
 )
