@@ -11,9 +11,10 @@ const Root = styled.div`
 `
 
 const Footer = styled.div`
+  min-height: 10rem;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: ${props => props.theme.brandColor};
@@ -34,7 +35,8 @@ const Benefits = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   background-color: ${props => props.theme.primaryColor};
 `
 
@@ -58,8 +60,9 @@ const Presentation = styled.div`
 `
 
 const ContactSection = styled.div`
-  padding: 2rem;
   width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,12 +89,17 @@ const BenefitImage = styled.img`
 `
 
 const FooterLink = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 5rem;
   padding: 1rem;
-  color: ${props => props.theme.secondaryColor}
+  color: ${props => props.theme.secondaryColor};
+  font-weight: 700;
 `
 
 const StyledH1 = styled.h1`
-  font-size: 60px;
+  font-size: 40px;
 `
 
 const LogoBox = styled.div`
@@ -117,10 +125,14 @@ const Name = styled.h3`
 const Ext = styled.h3`
 `
 
-const StyledH3 = styled.h3`
-  color: ${props => props.theme.secondaryFontColor};
-  padding: 0.25rem;
+const Detail = styled.div`
+  margin: 3rem;
+  text-align: center;
 `
+const DetailText = styled.h3`
+color: ${props => props.theme.secondaryFontColor};
+`
+
 const StyledEmail = styled.h3`
   color: ${props => props.theme.brandColor};
 `
@@ -130,6 +142,10 @@ const EmailSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`
+const FooterContent = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 export default () => (
@@ -161,17 +177,19 @@ export default () => (
       </Benefits>
       <Presentation>
         <StyledH1><strong>Hi, I'am Lohnbot</strong></StyledH1>
-        <StyledH3>Your bathroom renovation personal assistant.
-          Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
-          I will use magic to give you the best recommendations for your new bathroom.
-        </StyledH3>
+        <Detail>
+          <DetailText>Your bathroom renovation personal assistant.
+            Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
+            I will use magic to give you the best recommendations for your new bathroom.
+          </DetailText>
+        </Detail>
         <EmailSection>
-          <StyledH3>Email me to:</StyledH3>
+          <DetailText>Email me to:</DetailText>
           <StyledEmail><strong>lohnbot@lohnbot.ai</strong></StyledEmail>
         </EmailSection>
       </Presentation>
       <ContactSection>
-        <h1>LohnBot.ai</h1>
+        <h1><strong>LohnBot.ai</strong></h1>
         <h1>Your personal bathroom planner</h1>
         <h3>Juts tell me your bathroom doubts and concerns</h3>
         <form>
@@ -180,10 +198,12 @@ export default () => (
         </form>
       </ContactSection>
       <Footer>
-        <FooterLink><h3>LohnBot.ai</h3></FooterLink>
-        <FooterLink><h3>How it works</h3></FooterLink>
-        <FooterLink><h3>Pricing</h3></FooterLink>
-        <FooterLink><h3>Contact</h3></FooterLink>
+        <FooterContent>
+          <FooterLink><h3>Lohnbot.ai</h3></FooterLink>
+          <FooterLink><h3>How it works</h3></FooterLink>
+          <FooterLink><h3>Pricing</h3></FooterLink>
+          <FooterLink><h3>Contact</h3></FooterLink>
+        </FooterContent>
       </Footer>
   </Root>
 )
