@@ -10,7 +10,6 @@ const Root = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 80vh;
   background-color: ${props => props.theme.secondaryColor};
 `
 
@@ -31,6 +30,10 @@ const Statement = styled.div`
   text-align: center;
   justify-content: flex-start;
   width: 700px;
+`
+
+const SubStatement = styled.div`
+  display: flex;
 `
 
 const LogoBox = styled.div`
@@ -57,6 +60,7 @@ const Ext = styled.h3`
 
 const Still = styled.h1`
   padding-right: 0.5rem;
+  font-weight: lighter;
 `
 
 const Typed = styled.h1`
@@ -73,7 +77,9 @@ export default() => (
       <Statement>
         <Still>Get</Still><Typed><strong><Typist /></strong></Typed>
       </Statement>
-      <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
+      <SubStatement>
+        <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
+      </SubStatement>
     </StatementBox>
     <ConversationBox />
   </Root>
