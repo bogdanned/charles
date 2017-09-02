@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-types": "^6.26.0",
     "compression-webpack-plugin": "^1.0.0",
+    "css-loader": "^0.28.7",
     "express": "^4.15.4",
     "express-reloadable": "^1.0.12",
     "fs": "0.0.1-security",

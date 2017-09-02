@@ -7,6 +7,8 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import { reducer as reduxFormReducer } from 'redux-form'
 import thunk from "redux-thunk"
 
+import '../../node_modules/react-typist/dist/Typist.css'
+
 import App from "./components/App"
 import chatReducer from "./reducers/chat"
 
