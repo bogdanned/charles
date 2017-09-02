@@ -1,8 +1,8 @@
 #Pull form master
-git pull origin master
+sudo git pull origin master
 
 #Build with webpack
-webpack
+sudo webpack
 
 #run node
-node src/server/index.js
+sudo node src/server/index.js
