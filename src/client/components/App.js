@@ -70,7 +70,7 @@ const ContactSection = styled.div`
 `
 
 const Logo = styled.img`
-  width: 40px;
+  width: 30px;
   padding: 0.25rem;
 `
 
@@ -113,9 +113,15 @@ const LogoBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+  padding: 1rem;
 `
 
-const LogoText = styled.h3`
+const LogoText = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 const Name = styled.h3`
@@ -128,12 +134,19 @@ const ChatContainer = styled.div`
   flex-direction: column;
 `
 
+const Ext = styled.h3`
+`
+
+const StyledH3 = styled.h3`
+  color: ${props => props.theme.primaryColor}
+`
+
 const App =  ({sendMessage}) => (
   <Root>
       <UpperSection>
         <LogoBox>
           <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
-          <LogoText><Name>LohnBot</Name>.ai</LogoText>
+          <LogoText><Name>Lohnbot</Name><Ext>.ai</Ext></LogoText>
         </LogoBox>
         <Statement>
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
@@ -164,11 +177,11 @@ const App =  ({sendMessage}) => (
         </Benefit>
       </Benefits>
       <Presentation>
-        <StyledH1><strong>Hi, I'am LohnBot</strong></StyledH1>
-        <h3>Your bathroom renovation personal assistant.
+        <StyledH1><strong>Hi, I'am Lohnbot</strong></StyledH1>
+        <StyledH3>Your bathroom renovation personal assistant.
           Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
           I will use magic to give you the best recommendations for your new bathroom.
-        </h3>
+        </StyledH3>
         <h3>Email me to:</h3>
         <h3><strong>lohnbot@lohnbot.ai</strong></h3>
       </Presentation>
