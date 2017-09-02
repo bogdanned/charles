@@ -68,6 +68,10 @@ const StyledForm = styled.form`
   flex-direction: column;
 `
 
+const BenefitImage = styled.img`
+  width: 180px;
+`
+
 export default () => (
   <Root>
       <UpperSection>
@@ -87,15 +91,15 @@ export default () => (
       </UpperSection>
       <Benefits>
         <Benefit>
-          <img src="http://www.freepik.com/free-vector/bathroom-background-design_1076708.html"/>
+          <BenefitImage src="https://image.freepik.com/free-vector/bathroom-background-design_1294-83.jpg"/>
           <p><strong>Does your bathroom need a renovation or repair?</strong></p>
         </Benefit>
         <Benefit>
-          <img src="http://www.freepik.com/free-vector/white-with-red-and-blue-lines-envelope-design_850231.html"/>
+          <BenefitImage src="https://image.freepik.com/free-vector/white-with-red-and-blue-lines-envelope-design_1095-114.jpg"/>
           <p><strong>Message me with your bath related doubts</strong></p>
         </Benefit>
         <Benefit>
-          <img src="http://www.freepik.com/free-vector/construction-worker-avatar-design_909450.htm"/>
+          <BenefitImage src="https://image.freepik.com/free-vector/construction-worker-avatar-design_1146-18.jpg"/>
           <p><strong>Get indications and quotes from Magnus</strong></p>
         </Benefit>
       </Benefits>
