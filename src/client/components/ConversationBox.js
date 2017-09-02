@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import { Field, reduxForm } from 'redux-form'
+import {Field, reduxForm} from 'redux-form'
 import {compose, withHandlers} from "recompose"
 import * as actions from "../actions"
 
@@ -40,21 +40,17 @@ const Button = styled.button`
   font-size: 18px;
 `
 
-const AiForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const StyledInput = styled.input`
   height: 40px;
   width: 600px;
 `
 
+
 const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
 `
+
 
 const ChatContainer = styled.div`
   max-width: 100%;
@@ -63,8 +59,11 @@ const ChatContainer = styled.div`
   flex-direction: column;
 `
 
+const renderInput = ({input})=>(
+  <StyledInput {...input}/>
+)
 
-const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
+const ConvBox = ({messages}) => {
   const renderMessages = messages.map((message)=>(
     <UserMessage>{message}</UserMessage>
   ))
@@ -74,12 +73,10 @@ const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
         {renderMessages}
       </MessagesBox>
       <ChatContainer>
-        <AiForm>
-          <StyledForm>
-            <StyledInput onChange={e => handleChange(e.target.value)} type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-            <Button disabled={inputValue == ""} onClick={e => sendMessage(e.target.value)} type="submit">Send</Button>
-          </StyledForm>
-        </AiForm>
+        <StyledForm>
+          <Field component={renderInput} name={'input-chat'} ></Field>
+          <Button type="submit">Send</Button>
+        </StyledForm>
       </ChatContainer>
     </Root>
   )
@@ -87,9 +84,8 @@ const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
 
 
 export default compose(
-  connect(({chat: {sentMessages, inputValue}})=>({
-    messages: sentMessages,
-    inputValue
+  connect(({chat: {sentMessages}})=>({
+    messages: sentMessages
   })),
   withHandlers({
     sendMessage: ({dispatch}) => (value) => {

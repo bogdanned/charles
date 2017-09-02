@@ -4,12 +4,14 @@ import {ThemeProvider} from 'styled-components'
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {Provider} from "react-redux"
 import {composeWithDevTools} from 'redux-devtools-extension'
+import { reducer as reduxFormReducer } from 'redux-form'
 
 import App from "./components/App"
 import chatReducer from "./reducers/chat"
 
 const rootReducer = combineReducers({
   chat: chatReducer,
+  form: reduxFormReducer, // mounted under "form"
 })
 
 let store = createStore(rootReducer, composeWithDevTools(
