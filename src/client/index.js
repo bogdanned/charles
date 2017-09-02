@@ -13,11 +13,6 @@ const rootReducer = combineReducers({
 })
 
 let store = createStore(rootReducer, composeWithDevTools(
-  enhancer,
-  applyMiddleware(
-    thunk.withExtraArgument({client,routeQueryMap}),
-    middleware,
-  ),
 ))
 
 const theme = {
