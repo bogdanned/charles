@@ -5,6 +5,7 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {Provider} from "react-redux"
 import {composeWithDevTools} from 'redux-devtools-extension'
 import { reducer as reduxFormReducer } from 'redux-form'
+import thunk from "redux-thunk"
 
 import App from "./components/App"
 import chatReducer from "./reducers/chat"
@@ -14,8 +15,10 @@ const rootReducer = combineReducers({
   form: reduxFormReducer, // mounted under "form"
 })
 
+
 let store = createStore(rootReducer, composeWithDevTools(
 ))
+
 
 const theme = {
   brandColor: "#3498db",
@@ -23,6 +26,7 @@ const theme = {
   secondaryColor: "white",
   secondaryFontColor: "#BDC3C7"
 }
+
 
 const renderApp = () => {
   render(
