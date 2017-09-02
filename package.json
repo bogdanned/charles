@@ -39,6 +39,7 @@
     "recompose": "^0.25.0",
     "redux": "^3.7.2",
     "redux-first-router": "^1.9.19",
+    "redux-form": "^7.0.3",
     "styled-components": "^2.1.2",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"

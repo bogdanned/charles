@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import ConversationBox from './ConversationBox'
-import {compose, withHandlers} from "recompose"
-import * as actions from "../actions"
-import {connect} from 'react-redux'
-
 
 const Root = styled.div`
   display: flex;
@@ -75,10 +71,7 @@ const Logo = styled.img`
   padding: 0.25rem;
 `
 
-const StyledInput = styled.input`
-  height: 40px;
-  width: 600px;
-`
+
 
 const Statement = styled.div`
   display: flex;
@@ -86,16 +79,7 @@ const Statement = styled.div`
   align-items: center;
   `
 
-const AiForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
 
-const StyledForm = styled.div`
-  display: flex;
-  flex-direction: column;
-`
 
 const BenefitImage = styled.img`
   width: 150px;
@@ -128,12 +112,7 @@ const LogoText = styled.div`
 const Name = styled.h3`
   font-weight: 800;
 `
-const ChatContainer = styled.div`
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`
+
 
 const Ext = styled.h3`
 `
@@ -153,7 +132,7 @@ const EmailSection = styled.div`
   align-items: center;
 `
 
-const App =  ({sendMessage, handleChange}) => (
+export default () => (
   <Root>
       <UpperSection>
         <LogoBox>
@@ -164,15 +143,7 @@ const App =  ({sendMessage, handleChange}) => (
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
           <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
         </Statement>
-        <ChatContainer>
-          <ConversationBox/>
-          <AiForm>
-            <StyledForm>
-              <StyledInput onChange={e => handleChange(e.target.value)} type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-              <button onClick={e => sendMessage(e.target.value)} type="submit">Send</button>
-            </StyledForm>
-          </AiForm>
-        </ChatContainer>
+        <ConversationBox></ConversationBox>
       </UpperSection>
       <Benefits>
         <Benefit>
@@ -216,16 +187,3 @@ const App =  ({sendMessage, handleChange}) => (
       </Footer>
   </Root>
 )
-
-
-export default compose(
-  connect(),
-  withHandlers({
-    sendMessage: ({dispatch}) => (value) => {
-      dispatch(actions.sendMessage(value))
-    },
-    handleChange: ({dispatch}) => (value) => {
-      dispatch(actions.setInputFieldValue(value))
-    }
-  })
-)(App)
