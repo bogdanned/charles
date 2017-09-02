@@ -58,6 +58,7 @@ const Presentation = styled.div`
   align-items: center;
   width: 50%;
   background-color: ${props => props.theme.secondaryColor};
+  padding: 2rem;
 `
 
 const ContactSection = styled.div`
@@ -125,7 +126,7 @@ const LogoText = styled.div`
 `
 
 const Name = styled.h3`
-  font-weight: 700;
+  font-weight: 800;
 `
 const ChatContainer = styled.div`
   max-width: 100%;
@@ -138,7 +139,18 @@ const Ext = styled.h3`
 `
 
 const StyledH3 = styled.h3`
-  color: ${props => props.theme.primaryColor}
+  color: ${props => props.theme.secondaryFontColor};
+  padding: 0.25rem;
+`
+const StyledEmail = styled.h3`
+  color: ${props => props.theme.brandColor};
+`
+
+const EmailSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const App =  ({sendMessage}) => (
@@ -182,8 +194,10 @@ const App =  ({sendMessage}) => (
           Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
           I will use magic to give you the best recommendations for your new bathroom.
         </StyledH3>
-        <h3>Email me to:</h3>
-        <h3><strong>lohnbot@lohnbot.ai</strong></h3>
+        <EmailSection>
+          <StyledH3>Email me to:</StyledH3>
+          <StyledEmail><strong>lohnbot@lohnbot.ai</strong></StyledEmail>
+        </EmailSection>
       </Presentation>
       <ContactSection>
         <h1>LohnBot.ai</h1>
