@@ -1,14 +1,14 @@
 import path from 'path'
 import webpack from 'webpack'
-import fs from "fs"
 import qs from 'querystring'
 import reloadable from "express-reloadable"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import CompressionWebpackPlugin from "compression-webpack-plugin"
 import AssetsPlugin from 'assets-webpack-plugin'
 
-const isDev = process.env.NODE_ENV === "development",
-      [host,port=80] = process.env.CDN_DOMAIN.split(":")
+const isDev = true,
+      host = 'localhost',
+      port = 3000
 
 const vendor = [
   "react",
@@ -17,7 +17,7 @@ const vendor = [
   "react-redux",
   "redux-first-router",
   "history",
-  "recompose",
+  "recompose"
 ]
 
 export default {
@@ -25,14 +25,13 @@ export default {
   bail: false,
   node: {
     fs: false,
-    process: false,
     Buffer: false
   },
   entry: isDev ? {
     app: [
       'babel-polyfill',
       'react-hot-loader/patch',
-      `webpack-dev-server/client?https://${host}:${port}`,
+      `webpack-dev-server/client?http://${host}:${port}`,
       'webpack/hot/only-dev-server',
       path.join(__dirname, '/src/client/index.js')
     ],
@@ -46,13 +45,13 @@ export default {
   output: {
     path: path.join(__dirname, "public"),
     filename: isDev ? 'bundle-[name].js' : 'bundle-[name]-[hash].js',
-    publicPath: `https://${process.env.CDN_DOMAIN}/`
+    publicPath: `http://localhost:3000/`
   },
   devServer: {
     hot: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "public"),
-    host: "0.0.0.0",
+    host: "localhost",
     disableHostCheck: true,
     port,
     overlay: true,
@@ -73,7 +72,6 @@ export default {
       minChunks: Infinity,
     }),
     ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
-    new webpack.EnvironmentPlugin(Object.keys(process.env)),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -97,10 +95,6 @@ export default {
         loader: 'babel-loader'
       },
       {
-          test: /highcharts\/highcharts-more\.src\.js/,
-          use: ['imports-loader?module=>undefined,Highcharts=highcharts'],
-      },
-      {
         test: /\.css$/,
         loader: [
           "style-loader",
@@ -110,11 +104,7 @@ export default {
             localIdentName: '[path][name]-[local]'
           }),
         ].join("!")
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: 'file-loader'
-      },
+      }
     ],
   },
   resolve: {
