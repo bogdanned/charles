@@ -22,6 +22,8 @@ const StatementBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 `
 
 const Statement = styled.div`
@@ -29,11 +31,15 @@ const Statement = styled.div`
   flex-direction: row;
   text-align: center;
   justify-content: flex-start;
-  width: 700px;
+  min-width: 800px;
 `
 
 const SubStatement = styled.div`
   display: flex;
+`
+const SubStatementText = styled.h3`
+  font-weight: lighter;
+  color: ${props => props.theme.terciaryFontColor};
 `
 
 const LogoBox = styled.div`
@@ -61,10 +67,11 @@ const Ext = styled.h3`
 const Still = styled.h1`
   padding-right: 0.5rem;
   font-weight: lighter;
+  font-size: 40px;
 `
 
 const Typed = styled.h1`
-
+  font-size: 40px;
 `
 
 export default() => (
@@ -78,7 +85,7 @@ export default() => (
         <Still>Get</Still><Typed><strong><Typist /></strong></Typed>
       </Statement>
       <SubStatement>
-        <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
+        <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
     <ConversationBox />
