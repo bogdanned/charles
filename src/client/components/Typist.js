@@ -26,7 +26,7 @@ export default class MyComponent extends Component {
 
   render() {
     return(
-      <Typist key={this.state.textIndex} avgTypingDelay={90} onTypingDone={() => setTimeout(this.onTypingDone, 1000)} startDelay={1000}>
+      <Typist key={this.state.textIndex} avgTypingDelay={90} onTypingDone={() => setTimeout(this.onTypingDone, 1000)}>
         {typedText[this.state.textIndex]}
       </Typist>
     )
