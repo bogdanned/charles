@@ -18,7 +18,8 @@ let store = createStore(rootReducer, composeWithDevTools(
 const theme = {
   brandColor: "#3498db",
   primaryColor: "#ECECEC",
-  secondaryColor: "white"
+  secondaryColor: "white",
+  secondaryFontColor: "#BDC3C7"
 }
 
 const renderApp = () => {
