@@ -15,11 +15,12 @@ const Root = styled.div`
 `
 
 const Footer = styled.div`
+  min-height: 10rem;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: ${props => props.theme.brandColor};
 `
 
@@ -38,7 +39,8 @@ const Benefits = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   background-color: ${props => props.theme.primaryColor};
 `
 
@@ -62,8 +64,9 @@ const Presentation = styled.div`
 `
 
 const ContactSection = styled.div`
-  padding: 2rem;
   width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,6 +164,10 @@ const EmailSection = styled.div`
   justify-content: center;
   align-items: center;
 `
+const FooterContent = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 const App =  ({sendMessage, handleChange}) => (
   <Root>
@@ -220,10 +227,12 @@ const App =  ({sendMessage, handleChange}) => (
         </form>
       </ContactSection>
       <Footer>
-        <FooterLink><h3>Lohnbot.ai</h3></FooterLink>
-        <FooterLink><h3>How it works</h3></FooterLink>
-        <FooterLink><h3>Pricing</h3></FooterLink>
-        <FooterLink><h3>Contact</h3></FooterLink>
+        <FooterContent>
+          <FooterLink><h3>Lohnbot.ai</h3></FooterLink>
+          <FooterLink><h3>How it works</h3></FooterLink>
+          <FooterLink><h3>Pricing</h3></FooterLink>
+          <FooterLink><h3>Contact</h3></FooterLink>
+        </FooterContent>
       </Footer>
   </Root>
 )
