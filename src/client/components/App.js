@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ConversationBox from './ConversationBox'
+import {compose, withHandlers} from "recompose"
 
 
 const Root = styled.div`
@@ -84,7 +85,7 @@ const AiForm = styled.div`
   align-items: center;
 `
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -98,7 +99,14 @@ const FooterLink = styled.div`
 `
 
 
-export default () => (
+const ChatContainer = styled.div`
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`
+
+const App =  ({sendMessage}) => (
   <Root>
       <UpperSection>
         <Logo>
@@ -108,13 +116,15 @@ export default () => (
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
           <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
         </Statement>
-        <ConversationBox/>
-        <AiForm>
-          <StyledForm>
-            <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-            <button type="submit">Send</button>
-          </StyledForm>
-        </AiForm>
+        <ChatContainer>
+          <ConversationBox/>
+          <AiForm>
+            <StyledForm>
+              <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
+              <button onClick={sendMessage} type="submit">Send</button>
+            </StyledForm>
+          </AiForm>
+        </ChatContainer>
       </UpperSection>
       <Benefits>
         <Benefit>
@@ -156,3 +166,12 @@ export default () => (
       </Footer>
   </Root>
 )
+
+
+export default compose(
+  withHandlers({
+    sendMessage: props => event => {
+      props.updateValue(event.target.value)
+    }
+  })
+)(App)
