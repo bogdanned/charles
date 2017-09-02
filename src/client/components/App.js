@@ -5,7 +5,9 @@ import styled from 'styled-components'
 const Root = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  max-width: 1200px;
 `
 
 const Footer = styled.div`
@@ -16,35 +18,44 @@ const Footer = styled.div`
 `
 
 const UpperSection = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 80vh;
-  background-color: white;
+  background-color: ${props => props.theme.secondaryColor};
 `
 
 const Benefits = styled.div`
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
+  background-color: ${props => props.theme.primaryColor};
 `
 
 const Benefit = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  align-items: center;
 `
 
 const Presentation = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50%;
+  background-color: ${props => props.theme.secondaryColor};
 `
 
 const ContactSection = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${props => props.theme.primaryColor};
 `
 
 const Logo = styled.div`
@@ -69,8 +80,9 @@ const StyledForm = styled.form`
 `
 
 const BenefitImage = styled.img`
-  width: 180px;
+  width: 150px;
 `
+
 
 export default () => (
   <Root>
