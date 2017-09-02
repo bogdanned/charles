@@ -9,11 +9,12 @@ const Root = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.terciaryFontColor};
 `
 
 export default() => (
   <Root>
-    <h1><strong>LohnBot.ai</strong></h1>
+    <h1><strong>lohnbot.ai</strong></h1>
     <h1>Your personal bathroom planner</h1>
     <h3>Juts tell me your bathroom doubts and concerns</h3>
     <form>
