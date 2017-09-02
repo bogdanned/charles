@@ -56,10 +56,6 @@ export default {
     disableHostCheck: true,
     port,
     overlay: true,
-    https: {
-      cert: fs.readFileSync("./lokalleads.de-wildcard.cer"),
-      key: fs.readFileSync("./lokalleads.de-wildcard.key"),
-    },
     setup(app){
       let srcDir = path.resolve(__dirname, "src", "server")
       reloadable(app, {
