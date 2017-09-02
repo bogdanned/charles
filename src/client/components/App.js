@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import ConversationBox from './ConversationBox'
 import {compose, withHandlers} from "recompose"
+import * as actions from "../actions"
+import {connect} from 'react-redux'
 
 
 const Root = styled.div`
@@ -142,7 +144,7 @@ const App =  ({sendMessage}) => (
           <AiForm>
             <StyledForm>
               <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-              <button onClick={sendMessage} type="submit">Send</button>
+              <button onClick={(e) => sendMessage(e.target.value)} type="submit">Send</button>
             </StyledForm>
           </AiForm>
         </ChatContainer>
@@ -190,9 +192,11 @@ const App =  ({sendMessage}) => (
 
 
 export default compose(
+  connect(),
   withHandlers({
-    sendMessage: ({dispatch}) => () => {
-      dispatch()
+    sendMessage: ({dispatch}) => (value) => {
+      console.log(value, 'e')
+      dispatch(actions.sendMessage(value))
     }
   })
 )(App)

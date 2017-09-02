@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {compose} from 'recompose'
+import {connect} from 'react-redux'
 
 const Root = styled.div`
   display: flex;
@@ -13,8 +14,20 @@ const Root = styled.div`
 `
 
 
-export default () => {
+const ConvBox = ({messages}) => {
+  const renderMessages = messages.map((m)=>(
+    <p>{m}</p>
+  ))
   return(
-    <Root>sss</Root>
+    <Root>
+      {renderMessages}
+    </Root>
   )
 }
+
+
+export default compose(
+  connect(({chat: {sentMessages}})=>({
+    messages: sentMessages
+  }))
+)(ConvBox)
