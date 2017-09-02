@@ -1,5 +1,6 @@
 const initialState = {
   sentMessages: [],
+  receivedMessages: ["Hey Human!","Forget about your boyfriend .. !","...and meet me at the hotel"],
 }
 
 
