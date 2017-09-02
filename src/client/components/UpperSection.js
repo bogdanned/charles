@@ -19,10 +19,18 @@ const Logo = styled.img`
   padding: 0.25rem;
 `
 
-const Statement = styled.div`
+const StatementBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+const Statement = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-start;
+  width: 700px;
 `
 
 const LogoBox = styled.div`
@@ -47,16 +55,26 @@ const Name = styled.h3`
 const Ext = styled.h3`
 `
 
+const Still = styled.h1`
+  padding-right: 0.5rem;
+`
+
+const Typed = styled.h1`
+
+`
+
 export default() => (
   <Root>
     <LogoBox>
       <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
       <LogoText><Name>Lohnbot</Name><Ext>.ai</Ext></LogoText>
     </LogoBox>
-    <Statement>
-      <h1>Get <strong>instant quotes for your heating system</strong></h1>
+    <StatementBox>
+      <Statement>
+        <Still>Get</Still><Typed><strong><Typist /></strong></Typed>
+      </Statement>
       <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
-    </Statement>
+    </StatementBox>
     <ConversationBox />
   </Root>
   )

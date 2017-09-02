@@ -101,7 +101,7 @@ export default {
           'css-loader?' + qs.stringify({
             modules: false,
             importLoaders: 1,
-            localIdentName: '[path][name]-[local]'
+            localIdentName: '[path][name]-[local]',
           }),
         ].join("!")
       }
