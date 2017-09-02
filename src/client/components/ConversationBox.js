@@ -21,6 +21,15 @@ const MessagesBox = styled.div`
   width: 600px;
   border: 1px solid ${props => props.theme.primaryColor};
 `
+const ChatMessage = styled.p`
+  background: red;
+  color: white;
+  padding-right: 15px;
+  padding-left: 13px;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`
 
 const UserMessage = styled.p`
   background: #3498db;
@@ -66,14 +75,17 @@ const renderInput = ({input})=>(
   <StyledInput {...input}/>
 )
 
-const ConvBox = ({messages, submitting, pristine, handleSubmit}) => {
-  const renderMessages = messages.map((message)=>(
-    <UserMessage>{message}</UserMessage>
+const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit}) => {
+  const messages = sentMessages.map((message, index)=>(
+    <div>
+      {receivedMessages[index] ? <ChatMessage>{receivedMessages[index]}</ChatMessage> : null}
+      {sentMessages[index] ? <UserMessage>{sentMessages[index]}</UserMessage> : null}
+    </div>
   ))
   return(
     <Root>
       <MessagesBox>
-        {renderMessages}
+        {messages}
       </MessagesBox>
       <ChatContainer>
         <Field component={renderInput} name={'inputChat'} ></Field>
@@ -85,8 +97,9 @@ const ConvBox = ({messages, submitting, pristine, handleSubmit}) => {
 
 
 export default compose(
-  connect(({chat: {sentMessages}})=>({
-    messages: sentMessages
+  connect(({chat: {sentMessages, receivedMessages}})=>({
+    sentMessages,
+    receivedMessages
   })),
   withHandlers({
     onSubmit: ({dispatch}) => (values, _dispatch, props) => {

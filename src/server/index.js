@@ -2,9 +2,11 @@ import express from "express"
 import setup from "./setup"
 
 const app = express()
+
+app.get('/', (req, res) => res.sendfile('./public/index.html'))
+
 setup(app)
 
-app.get('/*', (req, res) => res.sendfile('./public/index.html'))
 
 const server = app.listen(3000)
 
