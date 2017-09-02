@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import sendMessage from './sendMessage'
+import receiveMessage from './receiveMessage'
 
 
 export default (message) => {
@@ -14,10 +15,12 @@ export default (message) => {
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
-    return await fetch({
+    const reply =  await fetch({
       method : 'POST',
       url: '/sendMessage',
       body: message
     })
+
+    dispatch(receiveMessage(reply))
   }
 }

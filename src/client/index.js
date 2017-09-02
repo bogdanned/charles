@@ -19,6 +19,7 @@ const rootReducer = combineReducers({
 
 
 let store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk)
 ))
 
 
