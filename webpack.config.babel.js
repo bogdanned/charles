@@ -13,7 +13,6 @@ const isDev = process.env.NODE_ENV === "development",
 const vendor = [
   "react",
   "react-dom",
-  "react-apollo",
   "redux",
   "react-redux",
   "redux-first-router",
