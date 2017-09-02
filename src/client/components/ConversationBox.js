@@ -31,6 +31,7 @@ const UserMessage = styled.p`
   padding-top: 5px;
   padding-bottom: 5px;
 `
+
 const Button = styled.button`
   height: 31px;
   margin-top: 5px;
@@ -38,19 +39,18 @@ const Button = styled.button`
   border: none;
   color: white;
   font-size: 18px;
+  :disabled{
+    background: #ECECEC;
+  }
 `
 
 const StyledInput = styled.input`
   height: 40px;
   width: 600px;
+  :focus{
+    outline: #3498db;
+  }
 `
-
-
-const StyledForm = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
 
 const ChatContainer = styled.div`
   max-width: 100%;
@@ -63,7 +63,7 @@ const renderInput = ({input})=>(
   <StyledInput {...input}/>
 )
 
-const ConvBox = ({messages}) => {
+const ConvBox = ({messages, submitting, pristine}) => {
   const renderMessages = messages.map((message)=>(
     <UserMessage>{message}</UserMessage>
   ))
@@ -73,10 +73,8 @@ const ConvBox = ({messages}) => {
         {renderMessages}
       </MessagesBox>
       <ChatContainer>
-        <StyledForm>
-          <Field component={renderInput} name={'input-chat'} ></Field>
-          <Button type="submit">Send</Button>
-        </StyledForm>
+        <Field component={renderInput} name={'input-chat'} ></Field>
+        <Button disabled={pristine || submitting}>Send</Button>
       </ChatContainer>
     </Root>
   )
@@ -91,11 +89,11 @@ export default compose(
     sendMessage: ({dispatch}) => (value) => {
       dispatch(actions.sendMessage(value))
     },
-    handleChange: ({dispatch}) => (value) => {
-      dispatch(actions.setInputFieldValue(value))
+    onSubmit: ({dispatch}) => (values) => {
+      dispatch(actions.setInputFieldValue(values))
     }
   }),
   reduxForm({
-    form: 'chat'
+    form: 'chat',
   })
 )(ConvBox)
