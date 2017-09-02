@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ConversationBox from './ConversationBox'
 
 
 const Root = styled.div`
@@ -63,6 +64,11 @@ const Logo = styled.div`
 
 `
 
+const StyledInput = styled.input`
+  height: 40px;
+  width: 600px;
+`
+
 const Statement = styled.div`
   display: flex;
   flex-direction: column;
@@ -95,9 +101,10 @@ export default () => (
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
           <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
         </Statement>
+        <ConversationBox/>
         <AiForm>
           <StyledForm>
-            <input type = "text" placeholder="Tell me about your bathroom, When was is last renovated, How big is it …"/>
+            <StyledInput type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
             <button type="submit">Send</button>
           </StyledForm>
         </AiForm>
