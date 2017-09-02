@@ -65,8 +65,9 @@ const ContactSection = styled.div`
   background-color: ${props => props.theme.primaryColor};
 `
 
-const Logo = styled.div`
-
+const Logo = styled.img`
+  width: 40px;
+  padding: 0.25rem;
 `
 
 const Statement = styled.div`
@@ -99,12 +100,26 @@ const StyledH1 = styled.h1`
   font-size: 60px;
 `
 
+const LogoBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
+const LogoText = styled.h3`
+`
+
+const Name = styled.h3`
+  font-weight: 700;
+`
+
 export default () => (
   <Root>
       <UpperSection>
-        <Logo>
-          <h1>LohnBot.ai</h1>
-        </Logo>
+        <LogoBox>
+          <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
+          <LogoText><Name>LohnBot</Name>.ai</LogoText>
+        </LogoBox>
         <Statement>
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
           <h3>Your personal advisor that helps you with bathroom planning and renovation</h3>
