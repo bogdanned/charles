@@ -12,5 +12,39 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/bnedelcu/magnus#readme"
+  "homepage": "https://bitbucket.org/bnedelcu/magnus#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "embrace-sql": "^1.0.6",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "recompose": "^0.24.0",
+    "redux-first-router": "^1.9.12",
+    "redux-first-router-link": "^1.1.3",
+    "styled-components": "^2.0.0",
+    "webpack": "2.6.1",
+    "webpack-dev-server": "2.4.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.13.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.9.0",
+    "express-reloadable": "^1.0.11",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
+    "image-webpack-loader": "^3.3.1"
+  }
 }
