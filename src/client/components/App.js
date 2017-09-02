@@ -13,6 +13,7 @@ const Root = styled.div`
 `
 
 const Footer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,15 +36,17 @@ const Benefits = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 2rem;
+  padding: 1rem;
   background-color: ${props => props.theme.primaryColor};
 `
 
 const Benefit = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 3rem;
   align-items: center;
+  max-width: 250px;
+  text-align: center;
 `
 
 const Presentation = styled.div`
@@ -95,9 +98,13 @@ const BenefitImage = styled.img`
 `
 
 const FooterLink = styled.div`
-
+  padding: 1rem;
+  color: ${props => props.theme.secondaryColor}
 `
 
+const StyledH1 = styled.h1`
+  font-size: 60px;
+`
 
 const ChatContainer = styled.div`
   max-width: 100%;
@@ -129,19 +136,19 @@ const App =  ({sendMessage}) => (
       <Benefits>
         <Benefit>
           <BenefitImage src="https://image.freepik.com/free-vector/bathroom-background-design_1294-83.jpg"/>
-          <p><strong>Does your bathroom need a renovation or repair?</strong></p>
+          <h4><strong>Does your bathroom need a renovation or repair?</strong></h4>
         </Benefit>
         <Benefit>
-          <BenefitImage src="https://image.freepik.com/free-vector/white-with-red-and-blue-lines-envelope-design_1095-114.jpg"/>
-          <p><strong>Message me with your bath related doubts</strong></p>
+          <BenefitImage src="https://image.flaticon.com/icons/svg/321/321817.svg"/>
+          <h4><strong>Message me with your bath related doubts</strong></h4>
         </Benefit>
         <Benefit>
-          <BenefitImage src="https://image.freepik.com/free-vector/construction-worker-avatar-design_1146-18.jpg"/>
-          <p><strong>Get indications and quotes from LohnBot</strong></p>
+          <BenefitImage src="https://image.flaticon.com/icons/svg/222/222567.svg"/>
+          <h4><strong>Get indications and quotes from LohnBot</strong></h4>
         </Benefit>
       </Benefits>
       <Presentation>
-        <h1><strong>Hi, I'am LohnBot</strong></h1>
+        <StyledH1><strong>Hi, I'am LohnBot</strong></StyledH1>
         <h3>Your bathroom renovation personal assistant.
           Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
           I will use magic to give you the best recommendations for your new bathroom.
