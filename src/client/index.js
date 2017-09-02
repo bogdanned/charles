@@ -5,6 +5,7 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {Provider} from "react-redux"
 import {composeWithDevTools} from 'redux-devtools-extension'
 import { reducer as reduxFormReducer } from 'redux-form'
+import '../../node_modules/react-typist/dist/Typist.css'
 
 import App from "./components/App"
 import chatReducer from "./reducers/chat"
