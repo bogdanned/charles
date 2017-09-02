@@ -71,9 +71,9 @@ export default () => (
         </Statement>
         <ConversationBox></ConversationBox>
       </UpperSection>
-      <Benefits />
-      <Presentation />
-      <Contact />
-      <Footer />
+      <Benefits/>
+      <Presentation/>
+      <Contact/>
+      <Footer/>
   </Root>
 )
