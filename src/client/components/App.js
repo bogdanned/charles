@@ -123,7 +123,7 @@ export default () => (
           I will use magic to give you the best recommendations for your new bathroom.
         </h3>
         <h3>Email me to:</h3>
-        <h3><strong>LohnBot@maguns.ai</strong></h3>
+        <h3><strong>lohnbot@lohnbot.ai</strong></h3>
       </Presentation>
       <ContactSection>
         <h1>LohnBot.ai</h1>
