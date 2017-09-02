@@ -17,7 +17,8 @@ const Detail = styled.div`
   text-align: center;
 `
 const DetailText = styled.h3`
-color: ${props => props.theme.secondaryFontColor};
+  font-weight: lighter;
+  color: ${props => props.theme.secondaryFontColor};
 `
 
 const StyledEmail = styled.h3`
