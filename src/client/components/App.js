@@ -129,8 +129,9 @@ const Detail = styled.div`
   margin: 3rem;
   text-align: center;
 `
+
 const DetailText = styled.h3`
-color: ${props => props.theme.secondaryFontColor};
+  color: ${props => props.theme.secondaryFontColor};
 `
 
 const StyledEmail = styled.h3`

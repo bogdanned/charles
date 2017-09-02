@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import { Field, reduxForm } from 'redux-form'
+import {Field, reduxForm} from 'redux-form'
 import {compose, withHandlers} from "recompose"
 import * as actions from "../actions"
 
@@ -51,7 +51,7 @@ const StyledInput = styled.input`
   width: 600px;
 `
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
 `
@@ -63,8 +63,11 @@ const ChatContainer = styled.div`
   flex-direction: column;
 `
 
+const renderInput = ({input})=>(
+  <StyledInput {...input}/>
+)
 
-const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
+const ConvBox = () => {
   const renderMessages = messages.map((message)=>(
     <UserMessage>{message}</UserMessage>
   ))
@@ -76,8 +79,8 @@ const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
       <ChatContainer>
         <AiForm>
           <StyledForm>
-            <StyledInput onChange={e => handleChange(e.target.value)} type = "text" placeholder="Tell me about your bathroom, When was is last renovated,  …"/>
-            <Button disabled={inputValue == ""} onClick={e => sendMessage(e.target.value)} type="submit">Send</Button>
+            <Field component={renderInput} ></Field>
+            <Button type="submit">Send</Button>
           </StyledForm>
         </AiForm>
       </ChatContainer>
@@ -87,10 +90,7 @@ const ConvBox = ({messages, inputValue, sendMessage, handleChange}) => {
 
 
 export default compose(
-  connect(({chat: {sentMessages, inputValue}})=>({
-    messages: sentMessages,
-    inputValue
-  })),
+  connect(),
   withHandlers({
     sendMessage: ({dispatch}) => (value) => {
       dispatch(actions.sendMessage(value))
