@@ -42,6 +42,9 @@ const Button = styled.button`
   :disabled{
     background: #ECECEC;
   }
+  :focus{
+    outline: #3498db;
+  }
 `
 
 const StyledInput = styled.input`
@@ -63,7 +66,7 @@ const renderInput = ({input})=>(
   <StyledInput {...input}/>
 )
 
-const ConvBox = ({messages, submitting, pristine}) => {
+const ConvBox = ({messages, submitting, pristine, handleSubmit}) => {
   const renderMessages = messages.map((message)=>(
     <UserMessage>{message}</UserMessage>
   ))
@@ -73,8 +76,8 @@ const ConvBox = ({messages, submitting, pristine}) => {
         {renderMessages}
       </MessagesBox>
       <ChatContainer>
-        <Field component={renderInput} name={'input-chat'} ></Field>
-        <Button disabled={pristine || submitting}>Send</Button>
+        <Field component={renderInput} name={'inputChat'} ></Field>
+        <Button type="button" disabled={pristine || submitting} onClick={handleSubmit}>Send</Button>
       </ChatContainer>
     </Root>
   )
@@ -86,11 +89,9 @@ export default compose(
     messages: sentMessages
   })),
   withHandlers({
-    sendMessage: ({dispatch}) => (value) => {
-      dispatch(actions.sendMessage(value))
-    },
-    onSubmit: ({dispatch}) => (values) => {
-      dispatch(actions.setInputFieldValue(values))
+    onSubmit: ({dispatch}) => (values, _dispatch, props) => {
+      dispatch(actions.sendMessage(values))
+      props.reset()
     }
   }),
   reduxForm({

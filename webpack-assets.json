@@ -1,1 +1,1 @@
-{"app":{"js":"http://127.0.0.1:3000/bundle-app.js"},"vendor":{"js":"http://127.0.0.1:3000/bundle-vendor.js"}}
+{"app":{"js":"http://localhost:3000/bundle-app.js"},"vendor":{"js":"http://localhost:3000/bundle-vendor.js"}}

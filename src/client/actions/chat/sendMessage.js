@@ -1,3 +1,3 @@
-export default (message) => {
-  return {type: "SEND_MESSAGE", payload: message}
+export default ({inputChat}) => {
+  return {type: "SEND_MESSAGE", payload: {inputChat}}
 }
