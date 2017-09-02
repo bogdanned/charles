@@ -40,21 +40,17 @@ const Button = styled.button`
   font-size: 18px;
 `
 
-const AiForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const StyledInput = styled.input`
   height: 40px;
   width: 600px;
 `
 
-const StyledForm = styled.form`
+
+const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
 `
+
 
 const ChatContainer = styled.div`
   max-width: 100%;
@@ -67,7 +63,7 @@ const renderInput = ({input})=>(
   <StyledInput {...input}/>
 )
 
-const ConvBox = () => {
+const ConvBox = ({messages}) => {
   const renderMessages = messages.map((message)=>(
     <UserMessage>{message}</UserMessage>
   ))
@@ -77,12 +73,10 @@ const ConvBox = () => {
         {renderMessages}
       </MessagesBox>
       <ChatContainer>
-        <AiForm>
-          <StyledForm>
-            <Field component={renderInput} ></Field>
-            <Button type="submit">Send</Button>
-          </StyledForm>
-        </AiForm>
+        <StyledForm>
+          <Field component={renderInput} name={'input-chat'} ></Field>
+          <Button type="submit">Send</Button>
+        </StyledForm>
       </ChatContainer>
     </Root>
   )
@@ -90,7 +84,9 @@ const ConvBox = () => {
 
 
 export default compose(
-  connect(),
+  connect(({chat: {sentMessages}})=>({
+    messages: sentMessages
+  })),
   withHandlers({
     sendMessage: ({dispatch}) => (value) => {
       dispatch(actions.sendMessage(value))
