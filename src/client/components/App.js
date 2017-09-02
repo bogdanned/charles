@@ -89,7 +89,7 @@ export default () => (
   <Root>
       <UpperSection>
         <Logo>
-          <h1>Magnus.ai</h1>
+          <h1>LohnBot.ai</h1>
         </Logo>
         <Statement>
           <h1>Get <strong>instant quotes for your heating system</strong></h1>
@@ -113,20 +113,20 @@ export default () => (
         </Benefit>
         <Benefit>
           <BenefitImage src="https://image.freepik.com/free-vector/construction-worker-avatar-design_1146-18.jpg"/>
-          <p><strong>Get indications and quotes from Magnus</strong></p>
+          <p><strong>Get indications and quotes from LohnBot</strong></p>
         </Benefit>
       </Benefits>
       <Presentation>
-        <h1><strong>Hi, I'am Magnus</strong></h1>
+        <h1><strong>Hi, I'am LohnBot</strong></h1>
         <h3>Your bathroom renovation personal assistant.
           Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
           I will use magic to give you the best recommendations for your new bathroom.
         </h3>
         <h3>Email me to:</h3>
-        <h3><strong>magnus@maguns.ai</strong></h3>
+        <h3><strong>LohnBot@maguns.ai</strong></h3>
       </Presentation>
       <ContactSection>
-        <h1>magus.ai</h1>
+        <h1>LohnBot.ai</h1>
         <h1>Your personal bathroom planner</h1>
         <h3>Juts tell me your bathroom doubts and concerns</h3>
         <form>
@@ -135,7 +135,7 @@ export default () => (
         </form>
       </ContactSection>
       <Footer>
-        <h3>magnus.ai</h3>
+        <h3>LohnBot.ai</h3>
         <h3>How it works</h3>
         <h3>Pricing</h3>
         <h3>Contact</h3>
