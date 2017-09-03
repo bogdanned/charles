@@ -1,6 +1,7 @@
 const initialState = {
   sentMessages: [],
   receivedMessages: [],
+  lastReceivedMessage: null
 }
 
 
@@ -15,6 +16,7 @@ export default function(state=initialState, action) {
       return {
         ...state,
         receivedMessages: state.receivedMessages.concat([action.payload]),
+        lastReceivedMessage: action.payload
       }
     default:
       return state

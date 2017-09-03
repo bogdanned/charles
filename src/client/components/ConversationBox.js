@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 import {Field, reduxForm} from 'redux-form'
-import {compose, withHandlers} from "recompose"
+import {compose, withHandlers, lifecycle} from "recompose"
 import * as actions from "../actions"
 
 
@@ -102,19 +102,45 @@ const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
 
-const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit}) => {
+
+const Option = ({option}) => {
+  console.log(option, 'option')
+  return(
+    <p>{option.label}</p>
+  )
+}
+
+
+const LastReceivedMessage = ({message})=>{
+  console.log(message, "lastReceivedMessage ---- c")
+  if(message && message.type == "multiOption"){
+    const options = message.options.map((o)=>(<Option option={o}/>))
+    return(
+      <div>
+        {options}
+      </div>
+    )
+  }else{
+    return null
+  }
+}
+
+
+const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
   const messages = sentMessages.map((message, index)=>(
-    <div>
+    <div key={index}>
       {receivedMessages[index] ? <ChatMessage>{receivedMessages[index]}</ChatMessage> : null}
       {sentMessages[index] ? <UserMessage>{sentMessages[index]}</UserMessage> : null}
     </div>
   ))
+  console.log(lastReceivedMessage, "last")
   return(
     <Root>
       <ChatContainer>
         <ChatHeader><p>Lohnbot</p></ChatHeader>
         <MessagesBox>
           {messages}
+          <LastReceivedMessage message={lastReceivedMessage}/>
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
@@ -127,10 +153,16 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
 
 
 export default compose(
-  connect(({chat: {sentMessages, receivedMessages}})=>({
+  connect(({chat: {sentMessages, receivedMessages, lastReceivedMessage}})=>({
     sentMessages,
-    receivedMessages
+    receivedMessages,
+    lastReceivedMessage
   })),
+  lifecycle({
+    componentDidMount(){
+      this.props.dispatch(actions.fetchReplyMessage({inputChat: null}))
+    }
+  }),
   withHandlers({
     onSubmit: ({dispatch}) => (values, _dispatch, props) => {
       dispatch(actions.fetchReplyMessage(values))

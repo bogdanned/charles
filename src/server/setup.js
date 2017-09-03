@@ -1,5 +1,7 @@
-import reply from './dummy/reply'
 import bodyParser from 'body-parser'
+
+import messages from './dummy/messages'
+import reply from './dummy/reply'
 
 
 export default (app) => {
@@ -8,9 +10,11 @@ export default (app) => {
 
   app.post('/sendMessage', (req, res) => {
 
-    console.log(req.body, "req body")
-
-    res.json(reply())
+    if(!req.body.inputChat){
+      res.json(messages[0])
+    }else{
+      res.json(reply())
+    }
 
     res.send()
   })
