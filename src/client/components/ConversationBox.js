@@ -101,7 +101,7 @@ const renderInput = ({input})=>(
 const Option = ({option}) => {
   console.log(option, 'option')
   return(
-    <p>{option.label}</p>
+    <button>{option.label}</button>
   )
 }
 
@@ -112,6 +112,7 @@ const LastReceivedMessage = ({message})=>{
     const options = message.options.map((o)=>(<Option option={o}/>))
     return(
       <div>
+        <h3>{message.text}</h3>
         {options}
       </div>
     )
@@ -122,19 +123,13 @@ const LastReceivedMessage = ({message})=>{
 
 
 const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
-  const messages = sentMessages.map((message, index)=>(
-    <div key={index}>
-      {receivedMessages[index] ? <ChatMessage>{receivedMessages[index]}</ChatMessage> : null}
-      {sentMessages[index] ? <UserMessage>{sentMessages[index]}</UserMessage> : null}
-    </div>
-  ))
+
   console.log(lastReceivedMessage, "last")
   return(
     <Root>
       <ChatContainer>
         <ChatHeader><p>Lohnbot</p></ChatHeader>
         <MessagesBox>
-          {messages}
           <LastReceivedMessage message={lastReceivedMessage}/>
         </MessagesBox>
         <ChatFooter>
