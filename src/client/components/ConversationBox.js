@@ -97,6 +97,14 @@ const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
 
+
+const Option = ({option}) => {
+  return(
+    <button>{option.label}</button>
+  )
+}
+
+
 const LastReceivedMessage = ({message})=>{
   if(message && message.type == "multiOption"){
     return(
@@ -110,8 +118,7 @@ const LastReceivedMessage = ({message})=>{
 }
 
 
-const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
-  console.log(lastReceivedMessage, "last")
+const ConvBox = ({submitting, pristine, handleSubmit, lastReceivedMessage}) => {
   return(
     <Root>
       <ChatContainer>
