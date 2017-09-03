@@ -8,37 +8,70 @@ export default [
       {
         label: "Bathroom",
         value: "bathroom",
-        nextID: "bathroom_choice"
+        nextId: "bathroom_choice"
       },
       {
         label: "Heizung",
         value: "heizung",
-        nextID: "heizung_choice"
+        nextId: "heizung_choice"
       },
       {
         label: "Decke",
         value: "decke",
-        nextID: "decke_choice"
+        nextId: "decke_choice"
       }
     ]
   },
   {
     type: "multiOption",
-    text: "Which bathroom do you need?",
+    text: "Neubau oder Sanierung?",
     name: "bathroom_choice",
     id: "bathroom_choice",
     options: [
       {
-        label: "Big Bathroom",
-        value: "big_bathroom"
+        label: "Neubau",
+        value: "neubau",
+        nextId: "bathroom_zuletz_choice"
       },
       {
-        label: "Small Bathroom",
-        value: "small_bathroom"
+        label: "Sanierung",
+        value: "sanierung",
+        nextId: "bathroom_zuletz_choice"
+      }
+    ]
+  },
+  {
+    type: "multiOption",
+    text: "Wann wurde Ihr Bad zuletzt saniert?",
+    name: "bathroom_zuletz_choice",
+    id: "bathroom_zuletz_choice",
+    options: [
+      {
+        label: "Nach 1975",
+        value: "nach_1975",
+        nextId: "end"
       },
       {
-        label: "Medium Bathroom",
-        value: "medium_bathroom"
+        label: "Vor 1975",
+        value: "vor_1975",
+        nextId: "end"
+      }
+    ]
+  },
+  {
+    type: "multiOption",
+    text: "Finished! Want to try again?",
+    name: "end",
+    id: "end",
+    options: [
+      {
+        label: "Yes!",
+        value: "yes",
+        nextId: "calculator_choice"
+      },
+      {
+        label: "No. I am done.",
+        value: "no"
       }
     ]
   },
