@@ -12,10 +12,20 @@ const OptionsBox = styled.div`
   padding: 0.25rem;
 `
 const Option = styled.button`
-  padding: 1rem;
-  margin: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
   display: flex;
   flex-grow: 1;
+  background-color: transparent;
+  color: ${ props => props.theme.brandColor};
+  border: 1px solid ${props => props.theme.brandColor};
+  border-radius: 2rem;
+  justify-content: center;
+  line-height: normal;
+  font-weight: bold;
 `
 
 let Options = ({lastReceivedMessage, onOptionClick}) => (

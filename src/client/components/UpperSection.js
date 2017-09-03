@@ -88,6 +88,6 @@ export default() => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    <ConversationBox />
+    <ConversationBox/>
   </Root>
   )
