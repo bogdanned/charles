@@ -131,7 +131,12 @@ const Conversation = ({conversation})=>{
     console.log(conv, "conv")
     if(conv && conv.text){
       /* is a bot question */
-      return(<ChatMessage>{conv.text}</ChatMessage>)
+      return(
+        <MessagesContainer>
+          <Avatar src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/p64x64/18157598_1651167781563230_8303316443347838395_n.png?oh=1317f29cc00a1254fd051e4890759e78&oe=5A5D1DAB"></Avatar>
+          <ChatMessage>{conv.text}</ChatMessage>
+        </MessagesContainer>
+      )
     }else if(conv){
       return(<UserMessage>{conv.answerText}</UserMessage>)
     }
@@ -151,7 +156,6 @@ const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceived
         <ChatHeader><p>Lohnbot</p></ChatHeader>
         <MessagesBox>
           <Conversation conversation={conversation}></Conversation>
-          <LastReceivedMessage message={lastReceivedMessage}/>
           <Options lastReceivedMessage={lastReceivedMessage}/>
         </MessagesBox>
         <ChatFooter>
