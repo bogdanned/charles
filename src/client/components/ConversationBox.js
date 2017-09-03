@@ -95,11 +95,12 @@ const BotMessagesContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
 `
+
 const UserMessagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 `
 
 const Avatar = styled.img`
