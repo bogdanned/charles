@@ -29,10 +29,10 @@ const FooterLink = styled.div`
 export default() => (
   <Footer>
     <FooterContent>
-      <FooterLink><h3>Lohnbot.ai</h3></FooterLink>
-      <FooterLink><h3>How it works</h3></FooterLink>
-      <FooterLink><h3>Pricing</h3></FooterLink>
-      <FooterLink><h3>Contact</h3></FooterLink>
+      <FooterLink><h5><strong>Lohnbot.ai</strong></h5></FooterLink>
+      <FooterLink><h5><strong>How it works</strong></h5></FooterLink>
+      <FooterLink><h5><strong>Pricing</strong></h5></FooterLink>
+      <FooterLink><h5><strong>Contact</strong></h5></FooterLink>
     </FooterContent>
   </Footer>
 )
