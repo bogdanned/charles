@@ -97,14 +97,6 @@ const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
 
-
-const Option = ({option}) => {
-  return(
-    <button>{option.label}</button>
-  )
-}
-
-
 const LastReceivedMessage = ({message})=>{
   if(message && message.type == "multiOption"){
     return(
