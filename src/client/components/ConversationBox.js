@@ -113,7 +113,7 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
-          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}><i className="fa fa-arrow-right fa-lg"></i></StyledButton>
+          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}></StyledButton>
         </ChatFooter>
       </ChatContainer>
     </Root>
