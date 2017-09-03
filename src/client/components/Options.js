@@ -26,6 +26,10 @@ const Option = styled.button`
   justify-content: center;
   line-height: normal;
   font-weight: bold;
+  cursor: pointer;
+  :focus{
+    outline: none;
+  }
 `
 
 let Options = ({lastReceivedMessage, onOptionClick}) => (
