@@ -15,6 +15,7 @@ export default (message) => {
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
+    console.log("sendign to backend: ", JSON.stringify(message))
     const reply = await fetch('/sendMessage', {
       method : 'POST',
       headers: {

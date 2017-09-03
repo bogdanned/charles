@@ -10,11 +10,9 @@ export default (app) => {
 
   app.post('/sendMessage', (req, res) => {
 
-    if(!req.body.inputChat){
+    if(!req.body){
       res.json(messages[0])
     }else{
-      const nextQuestion =
-
       res.json(reply(messages, req.body.inputChat))
     }
 

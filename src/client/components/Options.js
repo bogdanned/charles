@@ -20,7 +20,7 @@ const Option = styled.button`
 
 let Options = ({lastReceivedMessage, onOptionClick}) => (
   <OptionsBox>{lastReceivedMessage &&
-    lastReceivedMessage.options.map((o) => (<Option onClick={(e) => onOptionClick(e, o.value)} key={o.value}>{o.label}</Option>))}</OptionsBox>
+    lastReceivedMessage.options.map((o) => (<Option onClick={(e) => onOptionClick(e, o)} key={o.value}>{o.label}</Option>))}</OptionsBox>
 )
 
 export default compose(
@@ -29,7 +29,7 @@ export default compose(
     onOptionClick: ({dispatch}) => (e, value) => {
       e.preventDefault()
       console.log(value, "asdasd")
-      dispatch(actions.sendMessage({inputChat: value}))
+      dispatch(actions.fetchReplyMessage({inputChat: value}))
     }
   })
 )(Options)
