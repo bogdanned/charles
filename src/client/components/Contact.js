@@ -27,6 +27,9 @@ const StyledInput = styled.input`
   padding: 0.5rem;
   border: none;
   border-radius: 0.25rem;
+  :focus{
+    outline: none;
+  }
 `
 
 const FormBox = styled.div`
@@ -58,9 +61,8 @@ let Contact = ({onSubmit}) => (
 
 export default compose(
   withHandlers({
-    onSubmit: () => (e, value) => {
+    onSubmit: () => (e) => {
       e.preventDefault()
-      console.log(value)
     }
   })
 )(Contact)
