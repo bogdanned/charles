@@ -23,8 +23,8 @@ const MessagesBox = styled.div`
   height: 400px;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
 `
+
 const ChatMessage = styled.p`
-  width: 70%;
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
   padding-right: 15px;
@@ -36,7 +36,7 @@ const ChatMessage = styled.p`
   border-radius: 0.5rem 0.5rem 0.5rem 0;
 `
 
-const UserMessage = styled.p`
+const UserMessage = styled.div`
   background: #3498db;
   color: white;
   padding-right: 15px;
@@ -45,6 +45,7 @@ const UserMessage = styled.p`
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 0.25rem;
+  text-align: right;
 `
 
 const StyledButton = styled.button`
