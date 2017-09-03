@@ -4,7 +4,7 @@ import receiveMessage from './receiveMessage'
 
 
 export default (message) => {
-  return async function (dispatch) {
+  return function (dispatch) {
     // First dispatch: the app state is updated to inform
     // that the API call is starting.
 
@@ -15,12 +15,23 @@ export default (message) => {
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
-    const reply =  await fetch({
+    /*
+    fetch({
       method : 'POST',
-      url: '/sendMessage',
+      url: 'http://127.0.0.1:3000/sendMessage',
       body: message
-    })
+    }).then(res => res.json(),
+            error => console.log('An error occured.', error))
+      .then(json => console.log(json))*/
 
-    dispatch(receiveMessage(reply))
+    return fetch(`https://www.reddit.com/r/`)
+      .then(
+        response => response.json(),
+        // Do not use catch, because that will also catch
+        // any errors in the dispatch and resulting render,
+        // causing an loop of 'Unexpected batch number' errors.
+        // https://github.com/facebook/react/issues/6895
+        error => console.log('An error occured.', error)
+      ).then(json => console.log(json))
   }
 }
