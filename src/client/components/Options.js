@@ -42,8 +42,11 @@ export default compose(
   withHandlers({
     onOptionClick: ({dispatch}) => (e, value) => {
       e.preventDefault()
-      console.log(value, "asdasd")
-      dispatch(actions.fetchReplyMessage({inputChat: value}))
+      const answer = {
+        ...value,
+        createdAt: new Date()
+      }
+      dispatch(actions.fetchReplyMessage({inputChat: answer}))
     }
   })
 )(Options)

@@ -1,12 +1,19 @@
 const initialState = {
   sentMessages: [],
   receivedMessages: [],
-  lastReceivedMessage: null
+  lastReceivedMessage: null,
+  conversation: []
 }
 
 
 export default function(state=initialState, action) {
   switch(action.type){
+    case "STORE_MESSAGE":
+    console.log(action.payload, "paylaod")
+      return {
+        ...state,
+        conversation: state.conversation.concat([action.payload.inputChat])
+      }
     case "SEND_MESSAGE":
       return {
         ...state,

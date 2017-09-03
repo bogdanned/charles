@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch'
 import sendMessage from './sendMessage'
 import receiveMessage from './receiveMessage'
+import storeMessage from './storeMessage'
 
 
 export default (message) => {
@@ -9,13 +10,15 @@ export default (message) => {
     // that the API call is starting.
 
     dispatch(sendMessage(message))
+    if(message)
+      dispatch(storeMessage(message))
+
 
     // The function called by the thunk middleware can return a value,
     // that is passed on as the return value of the dispatch method.
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
-    console.log("sendign to backend: ", JSON.stringify(message))
     const reply = await fetch('/sendMessage', {
       method : 'POST',
       headers: {
@@ -24,6 +27,10 @@ export default (message) => {
       body: JSON.stringify(message)
     })
 
-    dispatch(receiveMessage(await reply.json()))
+    const answer = await reply.json()
+
+    if(answer)
+      dispatch(storeMessage(answer))
+      dispatch(receiveMessage(answer))
   }
 }
