@@ -65,6 +65,21 @@ const Name = styled.h3`
 const Ext = styled.h3`
 `
 
+
+const Button = styled.button`
+  width: 6rem;
+  align-self: center;
+  height: 40px;
+  background: #27AE61;
+  border: 1px solid white;
+  color: white;
+  font-size: 18px;
+  :focus{
+    outline: none;
+  }
+  margin-bottom: 10px;
+`
+
 const Still = styled.h1`
   padding-right: 0.5rem;
   font-weight: lighter;
@@ -89,7 +104,7 @@ let UpperSection = ({isChatVisible, showChat}) => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    <button onClick={showChat}>Start</button>
+    {!isChatVisible && <Button onClick={showChat}>Start</Button>}
     {isChatVisible &&
       <ConversationBox />
     }
