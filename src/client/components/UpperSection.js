@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {compose, withStateHandlers} from 'recompose'
 
 import Typist from './Typist'
 import ConversationBox from './ConversationBox'
@@ -74,7 +75,7 @@ const Typed = styled.h1`
   font-size: 40px;
 `
 
-export default() => (
+let UpperSection = ({isChatVisible, showChat}) => (
   <Root>
     <LogoBox>
       <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
@@ -88,6 +89,20 @@ export default() => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    <ConversationBox/>
+    <button onClick={showChat}>Start</button>
+    {isChatVisible &&
+      <ConversationBox />
+    }
   </Root>
   )
+
+export default compose(
+  withStateHandlers(
+    () => ({
+      isChatVisible: false
+    }),
+    {
+      showChat: () => () => ({isChatVisible: true})
+    }
+  )
+)(UpperSection)
