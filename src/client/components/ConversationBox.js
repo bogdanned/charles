@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import {connect} from 'react-redux'
 import {Field, reduxForm} from 'redux-form'
 import {compose, withHandlers, lifecycle} from "recompose"
-import * as actions from "../actions"
 
+import * as actions from "../actions"
+import Options from "./Options"
 
 const Root = styled.form`
   width: 100%;
@@ -17,8 +18,7 @@ const MessagesBox = styled.div`
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
   align-self: center;
   height: 400px;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
@@ -97,23 +97,11 @@ const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
 
-
-const Option = ({option}) => {
-  console.log(option, 'option')
-  return(
-    <button>{option.label}</button>
-  )
-}
-
-
 const LastReceivedMessage = ({message})=>{
-  console.log(message, "lastReceivedMessage ---- c")
   if(message && message.type == "multiOption"){
-    const options = message.options.map((o)=>(<Option option={o}/>))
     return(
       <div>
-        <h3>{message.text}</h3>
-        {options}
+        <ChatMessage>{message.text}</ChatMessage>
       </div>
     )
   }else{
@@ -123,7 +111,6 @@ const LastReceivedMessage = ({message})=>{
 
 
 const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
-
   console.log(lastReceivedMessage, "last")
   return(
     <Root>
@@ -131,6 +118,7 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
         <ChatHeader><p>Lohnbot</p></ChatHeader>
         <MessagesBox>
           <LastReceivedMessage message={lastReceivedMessage}/>
+          <Options lastReceivedMessage={lastReceivedMessage}/>
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
