@@ -1,6 +1,6 @@
 const initialState = {
   sentMessages: [],
-  receivedMessages: ["Hey Human!","Forget about your boyfriend .. !","...and meet me at the hotel"],
+  receivedMessages: [],
 }
 
 
@@ -10,6 +10,11 @@ export default function(state=initialState, action) {
       return {
         ...state,
         sentMessages: state.sentMessages.concat([action.payload.inputChat]),
+      }
+    case "RECEIVE_MESSAGE":
+      return {
+        ...state,
+        receivedMessages: state.receivedMessages.concat([action.payload]),
       }
     default:
       return state
