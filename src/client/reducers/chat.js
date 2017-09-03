@@ -12,7 +12,7 @@ export default function(state=initialState, action) {
     console.log(action.payload, "paylaod")
       return {
         ...state,
-        conversation: state.conversation.concat([action.payload.inputChat])
+        conversation: state.conversation.concat([action.payload])
       }
     case "SEND_MESSAGE":
       return {

@@ -1,3 +1,3 @@
-export default ({inputChat}) => {
-  return {type: "STORE_MESSAGE", payload: {inputChat}}
+export default (value) => {
+  return {type: "STORE_MESSAGE", payload: value}
 }

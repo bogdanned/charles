@@ -126,12 +126,31 @@ const LastReceivedMessage = ({message})=>{
 }
 
 
-const ConvBox = ({submitting, pristine, handleSubmit, lastReceivedMessage}) => {
+const Conversation = ({conversation})=>{
+  const items = conversation.map((conv)=>{
+    console.log(conv, "conv")
+    if(conv && conv.text){
+      /* is a bot question */
+      return(<ChatMessage>{conv.text}</ChatMessage>)
+    }else if(conv){
+      return(<UserMessage>{conv.answerText}</UserMessage>)
+    }
+  })
+  return(
+    <div>
+      {items}
+    </div>
+  )
+}
+
+
+const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
   return(
     <Root>
       <ChatContainer>
         <ChatHeader><p>Lohnbot</p></ChatHeader>
         <MessagesBox>
+          <Conversation conversation={conversation}></Conversation>
           <LastReceivedMessage message={lastReceivedMessage}/>
           <Options lastReceivedMessage={lastReceivedMessage}/>
         </MessagesBox>
@@ -146,10 +165,11 @@ const ConvBox = ({submitting, pristine, handleSubmit, lastReceivedMessage}) => {
 
 
 export default compose(
-  connect(({chat: {sentMessages, receivedMessages, lastReceivedMessage}})=>({
+  connect(({chat: {conversation, sentMessages, receivedMessages, lastReceivedMessage}})=>({
     sentMessages,
     receivedMessages,
-    lastReceivedMessage
+    lastReceivedMessage,
+    conversation
   })),
   lifecycle({
     componentDidMount(){
