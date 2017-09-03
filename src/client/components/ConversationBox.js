@@ -24,7 +24,8 @@ const MessagesBox = styled.div`
   border-radius: 0.25rem 0.25rem 0rem 0rem;
 `
 const ChatMessage = styled.p`
-  background: red;
+  width: 70%;
+  background: ${props => props.theme.secondaryColor};
   color: white;
   padding-right: 15px;
   padding-left: 13px;
@@ -93,6 +94,19 @@ const ChatFooter = styled.div`
 const StyledField = styled(Field)`
 `
 
+const MessagesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`
+
+const Avatar = styled.img`
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+`
+
 const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
@@ -100,9 +114,10 @@ const renderInput = ({input})=>(
 const LastReceivedMessage = ({message})=>{
   if(message && message.type == "multiOption"){
     return(
-      <div>
+      <MessagesContainer>
+        <Avatar src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/p64x64/18157598_1651167781563230_8303316443347838395_n.png?oh=1317f29cc00a1254fd051e4890759e78&oe=5A5D1DAB"></Avatar>
         <ChatMessage>{message.text}</ChatMessage>
-      </div>
+      </MessagesContainer>
     )
   }else{
     return null
