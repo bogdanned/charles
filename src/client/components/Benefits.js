@@ -27,7 +27,7 @@ const Benefit = styled.div`
 `
 
 const BenefitText = styled.h4`
-  color: ${props => props.theme.terciaryFontColor}
+  color: ${props => props.theme.terciaryFontColor};
 `
 
 export default () => (
