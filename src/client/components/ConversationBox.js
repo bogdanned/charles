@@ -95,7 +95,7 @@ const ChatFooter = styled.div`
 `
 
 const StyledField = styled(Field)`
-  flex-grow: 4;
+  flex-grow: 1;
 `
 
 const renderInput = ({input})=>(
@@ -118,7 +118,7 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
-          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}>Send</StyledButton>
+          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}><i className="fa fa-paper-plane-o fa-lg"></i></StyledButton>
         </ChatFooter>
       </ChatContainer>
     </Root>
