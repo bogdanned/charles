@@ -16,7 +16,7 @@ const Detail = styled.div`
   margin: 3rem;
   text-align: center;
 `
-const DetailText = styled.h3`
+export const DetailText = styled.h3`
   font-weight: lighter;
   color: ${props => props.theme.secondaryFontColor};
 `
@@ -26,7 +26,7 @@ const StyledEmail = styled.h3`
 `
 
 
-const StyledH1 = styled.h1`
+export const StyledH1 = styled.h1`
   font-size: 40px;
 `
 
