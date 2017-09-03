@@ -2,8 +2,7 @@ import reply from './dummy/reply'
 
 export default (app) => {
 
-  app.get('/sendMessage', (req, res) =>{
-    console.log('send message')
+  app.post('/sendMessage', (req, res) =>{
     res.json(reply())
     res.send()
   })
