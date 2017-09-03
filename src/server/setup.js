@@ -13,7 +13,9 @@ export default (app) => {
     if(!req.body.inputChat){
       res.json(messages[0])
     }else{
-      res.json(reply())
+      const nextQuestion =
+
+      res.json(reply(messages, req.body.inputChat))
     }
 
     res.send()
