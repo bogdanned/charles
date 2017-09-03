@@ -10,8 +10,10 @@ export default (message) => {
     // that the API call is starting.
 
     dispatch(sendMessage(message))
-    if(message)
-      dispatch(storeMessage(message))
+
+    if(message){
+      dispatch(storeMessage(message.inputChat))
+    }
 
 
     // The function called by the thunk middleware can return a value,
@@ -27,10 +29,10 @@ export default (message) => {
       body: JSON.stringify(message)
     })
 
-    const answer = await reply.json()
+    const replyJson = await reply.json()
 
-    if(answer)
-      dispatch(storeMessage(answer))
-      dispatch(receiveMessage(answer))
+    if(replyJson)
+      dispatch(storeMessage(replyJson))
+      dispatch(receiveMessage(replyJson))
   }
 }
