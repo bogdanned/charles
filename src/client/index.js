@@ -28,7 +28,7 @@ const theme = {
   primaryColor: "#F5F5F5",
   secondaryColor: "white",
   secondaryFontColor: "#95a5a6",
-  terciaryFontColor: "#4F4F4F"
+  terciaryFontColor: "#4F4F4F",
 }
 
 

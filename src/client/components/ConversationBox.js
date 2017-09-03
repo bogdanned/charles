@@ -25,14 +25,15 @@ const MessagesBox = styled.div`
 `
 const ChatMessage = styled.p`
   width: 70%;
-  background: ${props => props.theme.secondaryColor};
-  color: white;
+  background: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.terciaryFontColor};
   padding-right: 15px;
   padding-left: 13px;
   border-radius: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 0.25rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0;
 `
 
 const UserMessage = styled.p`
