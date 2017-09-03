@@ -1,32 +1,7 @@
 import _ from 'lodash'
 
-export default (messages, previousValue) => {
+export default (messages, {nextId}) => {
 
-  console.log(previousValue, "previousValue")
-
-
-  /* Standard Answer */
-  return{
-    type: "multiOption",
-    text: "Which calculator do you need?",
-    name: "calculator_choice",
-    id: "calculator_choice",
-    options: [
-      {
-        label: "Bathroom",
-        value: "bathroom",
-        nextID: "bathroom_choice"
-      },
-      {
-        label: "Heizung",
-        value: "heizung",
-        nextID: "heizung_choice"
-      },
-      {
-        label: "Decke",
-        value: "decke",
-        nextID: "decke_choice"
-      }
-    ]
-  }
+  console.log(messages.find((m)=>(m.id == nextId)), "finded ......")
+  return messages.find((m)=>(m.id == nextId))
 }
