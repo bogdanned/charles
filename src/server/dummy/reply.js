@@ -1,8 +1,7 @@
 import _ from 'lodash'
 
-export default (messages, previousValue) => {
+export default (messages, {nextId}) => {
 
-  console.log(previousValue)
-  console.log(messages.find((m)=>(m.id == previousValue.nextId)), "finded ......")
+  console.log(messages.find((m)=>(m.id == nextId)), "finded ......")
   return messages.find((m)=>(m.id == nextId))
 }
