@@ -99,7 +99,6 @@ const renderInput = ({input})=>(
 
 
 const Option = ({option}) => {
-  console.log(option, 'option')
   return(
     <button>{option.label}</button>
   )
@@ -107,7 +106,6 @@ const Option = ({option}) => {
 
 
 const LastReceivedMessage = ({message})=>{
-  console.log(message, "lastReceivedMessage ---- c")
   if(message && message.type == "multiOption"){
     const options = message.options.map((o)=>(<Option option={o}/>))
     return(
@@ -122,9 +120,7 @@ const LastReceivedMessage = ({message})=>{
 }
 
 
-const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit, lastReceivedMessage}) => {
-
-  console.log(lastReceivedMessage, "last")
+const ConvBox = ({submitting, pristine, handleSubmit, lastReceivedMessage}) => {
   return(
     <Root>
       <ChatContainer>
