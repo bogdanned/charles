@@ -17,7 +17,10 @@ export default (message) => {
 
     const reply = await fetch('http://127.0.0.1:3000/sendMessage', {
       method : 'POST',
-      body: JSON.stringify(message)
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: message
     })
 
     dispatch(receiveMessage(await reply.json()))
