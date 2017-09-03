@@ -31,6 +31,7 @@ const ChatMessage = styled.p`
   border-radius: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin: 0.25rem;
 `
 
 const UserMessage = styled.p`
@@ -41,26 +42,21 @@ const UserMessage = styled.p`
   border-radius: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin: 0.25rem;
 `
 
 const StyledButton = styled.button`
-  height: 31px;
-  margin-top: 5px;
-  background: #3498db;
   border: none;
-  color: white;
-  font-size: 18px;
-  flex-grow: 4;
-  :disabled{
-    background: #ECECEC;
-  }
-  :focus{
-    outline: #3498db;
+  color: ${props => props.theme.primaryColor};
+  background-color: transparent;
+  :hover {
+    color: ${props => props.theme.brandColor}
   }
 `
 
 const StyledInput = styled.input`
-  height: 40px;
+  width: 95%;
+  padding: 1rem;
   :focus{
     outline: #3498db;
   }
@@ -88,14 +84,13 @@ const ChatHeader = styled.div`
 const ChatFooter = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-flow: row wrap;
   align-items: center;
   width: 100%;
 `
 
 const StyledField = styled(Field)`
-  flex-grow: 4;
 `
 
 const renderInput = ({input})=>(
@@ -144,7 +139,7 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
-          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}>Send</StyledButton>
+          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}><i className="fa fa-arrow-right fa-lg"></i></StyledButton>
         </ChatFooter>
       </ChatContainer>
     </Root>
