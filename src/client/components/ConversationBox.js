@@ -7,10 +7,13 @@ import * as actions from "../actions"
 
 
 const Root = styled.form`
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `
 
 const MessagesBox = styled.div`
+  width: 100%;
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
@@ -18,8 +21,7 @@ const MessagesBox = styled.div`
   align-items: flex-start;
   align-self: center;
   height: 400px;
-  width: 600px;
-  border: 1px solid ${props => props.theme.primaryColor};
+  border-radius: 0.25rem 0.25rem 0rem 0rem;
 `
 const ChatMessage = styled.p`
   background: red;
@@ -41,13 +43,14 @@ const UserMessage = styled.p`
   padding-bottom: 5px;
 `
 
-const Button = styled.button`
+const StyledButton = styled.button`
   height: 31px;
   margin-top: 5px;
   background: #3498db;
   border: none;
   color: white;
   font-size: 18px;
+  flex-grow: 4;
   :disabled{
     background: #ECECEC;
   }
@@ -58,21 +61,45 @@ const Button = styled.button`
 
 const StyledInput = styled.input`
   height: 40px;
-  width: 600px;
   :focus{
     outline: #3498db;
   }
+  border: none;
+  border-radius: 0 0 0.25rem 0.25rem;
 `
 
 const ChatContainer = styled.div`
   max-width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  border: 1px solid ${props => props.theme.primaryColor};
+  border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+`
+
+const ChatHeader = styled.div`
+  padding: 0.5rem;
+  background-color: ${props => props.theme.brandColor};
+  color: ${props => props.theme.secondaryColor};
+  border-radius: 0.25rem 0.25rem 0 0;
+`
+
+const ChatFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+`
+
+const StyledField = styled(Field)`
+  flex-grow: 4;
 `
 
 const renderInput = ({input})=>(
-  <StyledInput {...input}/>
+  <StyledInput {...input} placeholder="Write a question..."/>
 )
 
 const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSubmit}) => {
@@ -84,12 +111,15 @@ const ConvBox = ({sentMessages, receivedMessages, submitting, pristine, handleSu
   ))
   return(
     <Root>
-      <MessagesBox>
-        {messages}
-      </MessagesBox>
       <ChatContainer>
-        <Field component={renderInput} name={'inputChat'} ></Field>
-        <Button type="submit" disabled={pristine || submitting} onClick={handleSubmit}>Send</Button>
+        <ChatHeader><p>Lohnbot</p></ChatHeader>
+        <MessagesBox>
+          {messages}
+        </MessagesBox>
+        <ChatFooter>
+          <StyledField component={renderInput} name={'inputChat'}></StyledField>
+          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}>Send</StyledButton>
+        </ChatFooter>
       </ChatContainer>
     </Root>
   )
