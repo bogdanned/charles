@@ -27,25 +27,18 @@ const MessagesBox = styled.div`
 const ChatMessage = styled.p`
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
-  padding-right: 15px;
-  padding-left: 13px;
-  border-radius: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 0.5rem;
   margin: 0.25rem;
   border-radius: 0.5rem 0.5rem 0.5rem 0;
 `
 
-const UserMessage = styled.div`
-  background: #3498db;
-  color: white;
-  padding-right: 15px;
-  padding-left: 13px;
-  border-radius: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+const UserMessage = styled.p`
+  background: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.terciaryFontColor};
   margin: 0.25rem;
+  padding: 0.5rem;
   text-align: right;
+  border-radius: 0.5rem 0.5rem 0 0.5rem;
 `
 
 const StyledButton = styled.button`
@@ -96,7 +89,13 @@ const ChatFooter = styled.div`
 const StyledField = styled(Field)`
 `
 
-const MessagesContainer = styled.div`
+const BotMessagesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`
+const UserMessagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -113,19 +112,6 @@ const renderInput = ({input})=>(
   <StyledInput {...input} placeholder="Write a question..."/>
 )
 
-const LastReceivedMessage = ({message})=>{
-  if(message && message.type == "multiOption"){
-    return(
-      <MessagesContainer>
-        <Avatar src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/p64x64/18157598_1651167781563230_8303316443347838395_n.png?oh=1317f29cc00a1254fd051e4890759e78&oe=5A5D1DAB"></Avatar>
-        <ChatMessage>{message.text}</ChatMessage>
-      </MessagesContainer>
-    )
-  }else{
-    return null
-  }
-}
-
 
 const Conversation = ({conversation})=>{
   const items = conversation.map((conv)=>{
@@ -133,13 +119,15 @@ const Conversation = ({conversation})=>{
     if(conv && conv.text){
       /* is a bot question */
       return(
-        <MessagesContainer>
+        <BotMessagesContainer>
           <Avatar src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/p64x64/18157598_1651167781563230_8303316443347838395_n.png?oh=1317f29cc00a1254fd051e4890759e78&oe=5A5D1DAB"></Avatar>
           <ChatMessage>{conv.text}</ChatMessage>
-        </MessagesContainer>
+        </BotMessagesContainer>
       )
     }else if(conv){
-      return(<UserMessage>{conv.answerText}</UserMessage>)
+      return(<UserMessagesContainer>
+        <UserMessage>{conv.answerText}</UserMessage>
+      </UserMessagesContainer>)
     }
   })
   return(
