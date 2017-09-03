@@ -20,7 +20,7 @@ export default (message) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: message
+      body: JSON.stringify(message)
     })
 
     dispatch(receiveMessage(await reply.json()))
