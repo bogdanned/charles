@@ -34,5 +34,6 @@ export default (message) => {
     if(replyJson)
       dispatch(storeMessage(replyJson))
       dispatch(receiveMessage(replyJson))
+
   }
 }
