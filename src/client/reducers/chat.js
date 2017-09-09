@@ -2,7 +2,8 @@ const initialState = {
   sentMessages: [],
   receivedMessages: [],
   lastReceivedMessage: null,
-  conversation: []
+  conversation: [],
+  isTyping: false
 }
 
 
@@ -17,13 +18,15 @@ export default function(state=initialState, action) {
     case "SEND_MESSAGE":
       return {
         ...state,
+        isTyping: true,
         sentMessages: state.sentMessages.concat([action.payload.inputChat]),
       }
     case "RECEIVE_MESSAGE":
       return {
         ...state,
         receivedMessages: state.receivedMessages.concat([action.payload]),
-        lastReceivedMessage: action.payload
+        lastReceivedMessage: action.payload,
+        isTyping: false
       }
     default:
       return state

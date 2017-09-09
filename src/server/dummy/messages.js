@@ -16,7 +16,7 @@ export default [
         label: "Heizung",
         value: "heizung",
         nextId: "heizung_choice",
-        answerText: "I want a heating sistem."
+        answerText: "I want a heating system."
       },
       {
         label: "Decke",
