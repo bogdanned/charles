@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { lighten } from 'polished'
 
 import {compose, withHandlers} from 'recompose'
 
 const StyledH1 = styled.h1`
   font-size: 36px;
 `
+
+
 
 const DetailText = styled.h3`
   font-weight: lighter;
@@ -37,12 +40,20 @@ const FormBox = styled.div`
 `
 
 const SendButton = styled.button`
+  width: 6rem;
+  align-self: center;
+  height: 40px;
   background-color: ${props => props.theme.brandColor};
-  color: ${props => props.theme.secondaryColor};
-  padding: 1rem;
-  border-radius: 0.25rem;
-  border: none;
-  margin: 0.25rem;
+  border: 1px solid white;
+  color: white;
+  font-size: 18px;
+  :focus{
+    outline: none;
+  }
+  :hover{
+    background-color: ${lighten(0.05, '#27AE61')};
+  }
+  margin-bottom: 10px;
 `
 
 let Contact = ({onSubmit}) => (

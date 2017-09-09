@@ -107,6 +107,7 @@ const Avatar = styled.img`
   height: 1.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  border-radius: 50%;
 `
 
 const renderInput = ({input})=>(
