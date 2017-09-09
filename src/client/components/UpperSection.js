@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {compose, withStateHandlers} from 'recompose'
+import { lighten } from 'polished'
 
 import Typist from './Typist'
 import ConversationBox from './ConversationBox'
@@ -76,6 +77,9 @@ const Button = styled.button`
   font-size: 18px;
   :focus{
     outline: none;
+  }
+  :hover{
+    background-color: ${lighten(0.05, '#27AE61')};
   }
   margin-bottom: 10px;
 `

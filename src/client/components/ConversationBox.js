@@ -116,7 +116,6 @@ const renderInput = ({input})=>(
 
 const Conversation = ({conversation})=>{
   const items = conversation.map((conv)=>{
-    console.log(conv, "conv")
     if(conv && conv.text){
       /* is a bot question */
       return(
