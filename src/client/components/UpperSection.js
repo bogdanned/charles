@@ -71,7 +71,7 @@ const Button = styled.button`
   width: 6rem;
   align-self: center;
   height: 40px;
-  background: #27AE61;
+  background-color: ${props => props.theme.brandColor};
   border: 1px solid white;
   color: white;
   font-size: 18px;
