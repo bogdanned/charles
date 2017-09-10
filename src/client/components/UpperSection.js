@@ -13,7 +13,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.secondaryColor};
-  padding-bottom: 3rem;
+  padding-bottom: 7rem;
 `
 
 const Logo = styled.img`
@@ -92,7 +92,7 @@ const StyledLink = styled(Link)`
   background-color: ${props => props.theme.brandColor};
   color: white;
   display: flex;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   align-items: center;
   justify-content: center;
   :focus{
@@ -117,7 +117,7 @@ const UpperSection = () => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    <StyledLink to="/bot">Start</StyledLink>
+    <StyledLink to="/bot"><h4>Start</h4></StyledLink>
   </Root>
   )
 
