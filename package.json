@@ -39,6 +39,7 @@
     "polished": "^1.7.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
@@ -50,7 +51,7 @@
     "redux-thunk": "^2.2.0",
     "style-loader": "^0.18.2",
     "styled-components": "^2.1.2",
-    "webpack": "^3.5.5",
+    "webpack": "2.6.1",
     "webpack-dev-server": "^2.7.1"
   },
   "devDependencies": {
@@ -61,7 +62,6 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.9.0",
     "nodemon": "^1.11.0",
-    "react-hot-loader": "^3.0.0-beta.7",
     "redux-devtools-extension": "^2.13.2"
   }
 }

@@ -7,7 +7,7 @@ import CompressionWebpackPlugin from "compression-webpack-plugin"
 import AssetsPlugin from 'assets-webpack-plugin'
 
 const isDev = true,
-      host = '127.0.0.1',
+      host = 'localhost',
       port = 3000
 
 const vendor = [
@@ -36,7 +36,9 @@ export default {
       path.join(__dirname, '/src/client/index.js')
     ],
     vendor
-  } : { app: [
+  } :
+  {
+    app: [
     'babel-polyfill',
     path.join(__dirname, '/src/client/index.js')
   ],
@@ -51,8 +53,8 @@ export default {
     hot: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "public"),
-    host: "127.0.0.1",
     disableHostCheck: true,
+    host,
     port,
     overlay: true,
     setup(app){
@@ -71,7 +73,7 @@ export default {
       name: "vendor",
       minChunks: Infinity,
     }),
-    ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -86,6 +88,9 @@ export default {
 			minRatio: 0.8
     }),
     new AssetsPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+    // do not emit compiled assets that include errors
   ],
   module: {
     loaders: [
