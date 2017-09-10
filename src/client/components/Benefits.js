@@ -30,7 +30,7 @@ const Benefit = styled.div`
   text-align: center;
 `
 
-const BenefitText = styled.h4`
+const BenefitText = styled.h5`
   color: ${props => props.theme.terciaryFontColor};
 `
 
@@ -46,7 +46,7 @@ export default () => (
     </Benefit>
     <Benefit>
       <BenefitImage src="https://image.flaticon.com/icons/svg/222/222567.svg"/>
-      <BenefitText><strong>Get quotes and answers to ypur doubts from LohnBot</strong></BenefitText>
+      <BenefitText><strong>Get quotes and answers to your doubts from LohnBot</strong></BenefitText>
     </Benefit>
   </Benefits>
 )

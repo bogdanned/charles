@@ -50,7 +50,7 @@ const SubStatement = styled.div`
     max-width: 700px;
 }
 `
-const SubStatementText = styled.h3`
+const SubStatementText = styled.h5`
   font-weight: lighter;
   color: ${props => props.theme.terciaryFontColor};
 `
