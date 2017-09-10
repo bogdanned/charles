@@ -2,29 +2,29 @@ export default [
   {
     createdAt: new Date(),
     type: "multiOption",
-    text: `Hello. My name is Charles. I am your 21 century carrer advisor.
-            Which carrer path are you intersted in?`,
+    text: `Hello Padawaan. My name is Charles. I am your 21 century career advisor.
+            What level of education do you currentlly possess?`,
     name: "calculator_choice",
     id: "calculator_choice",
     options: [
       {
-        label: "Bathroom",
-        value: "bathroom",
-        nextId: "bathroom_choice",
-        answerText: "I want a bathroom."
+        label: "Primary Education",
+        value: "primary_education",
+        nextId: "primary_education",
+        answerText: "Primary Education"
       },
       {
-        label: "Heizung",
-        value: "heizung",
+        label: "Secondary Education",
+        value: "Secondary Education",
+        nextId: "secondary_education",
+        answerText: "Secondary Education"
+      },
+      {
+        label: "University",
+        value: "university",
         nextId: "heizung_choice",
-        answerText: "I want a heating sistem."
+        answerText: "University"
       },
-      {
-        label: "Decke",
-        value: "decke",
-        nextId: "decke_choice",
-        answerText: "I want a roof."
-      }
     ]
   },
   {
