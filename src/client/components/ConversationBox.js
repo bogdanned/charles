@@ -71,7 +71,7 @@ const ChatContainer = styled.div`
 `
 
 const ChatHeader = styled.div`
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: ${props => props.theme.brandColor};
   color: ${props => props.theme.secondaryColor};
   border-radius: 0.25rem 0.25rem 0 0;
@@ -143,7 +143,7 @@ const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceived
   return(
     <Root>
       <ChatContainer>
-        <ChatHeader><p>Lohnbot</p></ChatHeader>
+        <ChatHeader><h6>Lohnbot</h6></ChatHeader>
         <MessagesBox>
           <Conversation conversation={conversation}></Conversation>
           <Options lastReceivedMessage={lastReceivedMessage}/>
