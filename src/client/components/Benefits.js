@@ -8,8 +8,8 @@ const Benefits = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: ${props => props.theme.primaryColor};
   @media only screen and (max-width: 700px) {
     flex-direction: column;

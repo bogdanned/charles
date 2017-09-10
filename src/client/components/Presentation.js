@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Root = styled.div`
   width: 100%;
-  padding: 2rem 0 2rem 0;
+  padding: 4rem 0 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -13,6 +13,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.secondaryColor};
+  padding-bottom: 3rem;
 `
 
 const Logo = styled.img`

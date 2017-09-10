@@ -28,7 +28,7 @@ const DetailText = styled.h3`
 
 const Root = styled.div`
   width: 100%;
-  padding-top: 3rem 0 3rem 0;
+  padding: 4rem 0 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
