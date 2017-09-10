@@ -22,7 +22,7 @@ export default [
       {
         label: "University",
         value: "university",
-        nextId: "heizung_choice",
+        nextId: "university",
         answerText: "University"
       },
     ]
@@ -30,56 +30,21 @@ export default [
   {
     createdAt: new Date(),
     type: "multiOption",
-    text: "Which decke do you need?",
-    name: "decke_choice",
-    id: "decke_choice",
+    text: "What level of univeristy education do you posees?",
+    name: "university_level",
+    id: "university_level",
     options: [
       {
-        label: "Big Decke",
-        value: "big_decke"
+        label: "Bachelor Degree",
+        value: "bachelor_degree"
       },
       {
-        label: "Small Decke",
-        value: "small_decke"
+        label: "Masters Degree",
+        value: "masters_degree"
       },
       {
-        label: "Medium Decke",
-        value: "medium_decke"
-      }
-    ]
-  },
-  {
-    createdAt: new Date(),
-    type: "multiOption",
-    text: "Which heizung do you need?",
-    name: "heizung_choice",
-    id: "heizung_choice",
-    options: [
-      {
-        label: "House Heizung",
-        value: "house_heizung"
-      },
-      {
-        label: "Other Heizung",
-        value: "other_heizung"
-      }
-    ]
-  },
-  {
-    createdAt: new Date(),
-    type: "multiOption",
-    text: "Finished! Want to try again?",
-    name: "end",
-    id: "end",
-    options: [
-      {
-        label: "Yes!",
-        value: "yes",
-        nextId: "calculator_choice"
-      },
-      {
-        label: "No. I am done.",
-        value: "no"
+        label: "Doctoral Degree",
+        value: "doctoral_degree"
       }
     ]
   }
