@@ -2,7 +2,8 @@ export default [
   {
     createdAt: new Date(),
     type: "multiOption",
-    text: "What do you need?",
+    text: `Hello. My name is Charles. I am your 21 century carrer advisor.
+            Which carrer path are you intersted in?`,
     name: "calculator_choice",
     id: "calculator_choice",
     options: [
