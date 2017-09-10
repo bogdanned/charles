@@ -90,7 +90,6 @@ const StyledLink = styled(Link)`
   align-self: center;
   height: 40px;
   background-color: ${props => props.theme.brandColor};
-  border: 1px solid white;
   color: white;
   font-size: 18px;
   display: flex;

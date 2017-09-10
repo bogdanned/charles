@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 const Root = styled.div`
   width: 100%;
+  padding: 2rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${props => props.theme.secondaryColor};
-  padding: 0.5rem;
   @media only screen and (max-width: 700px) {
       flex-direction: column;
       justify-content: center;

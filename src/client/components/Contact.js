@@ -4,12 +4,23 @@ import { lighten } from 'polished'
 
 import {compose, withHandlers} from 'recompose'
 
-const StyledH1 = styled.h1`
+const Title = styled.h1`
   font-size: 36px;
   text-align: center;
+  padding: 0 1rem 0 1rem;
+`
+
+const SubTitle = styled.h1`
+  font-size: 36px;
+  text-align: center;
+  padding: 0 1rem 0 1rem;
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
 `
 
 const DetailText = styled.h3`
+  padding: 0 1rem 0 1rem;
   font-weight: lighter;
   color: ${props => props.theme.secondaryFontColor};
   text-align: center;
@@ -17,8 +28,7 @@ const DetailText = styled.h3`
 
 const Root = styled.div`
   width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,8 +66,8 @@ const SendButton = styled.button`
 
 let Contact = ({onSubmit}) => (
   <Root>
-    <StyledH1><strong>lohnbot.ai</strong></StyledH1>
-    <StyledH1><strong>Your personal bathroom planner</strong></StyledH1>
+    <Title><strong>lohnbot.ai</strong></Title>
+    <SubTitle><strong>Your personal bathroom planner</strong></SubTitle>
     <DetailText>Juts tell me your bathroom doubts and concerns</DetailText>
     <FormBox>
       <form>
