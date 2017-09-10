@@ -30,7 +30,7 @@ const Benefit = styled.div`
   text-align: center;
 `
 
-const BenefitText = styled.h5`
+const BenefitText = styled.h6`
   color: ${props => props.theme.terciaryFontColor};
 `
 
