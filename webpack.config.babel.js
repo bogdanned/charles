@@ -45,7 +45,7 @@ export default {
   output: {
     path: path.join(__dirname, "public"),
     filename: isDev ? 'bundle-[name].js' : 'bundle-[name]-[hash].js',
-    publicPath: `http://127.0.0.1:3000/`
+    publicPath: `http://localhost:3000/`
   },
   devServer: {
     hot: true,
