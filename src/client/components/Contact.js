@@ -6,13 +6,13 @@ import {compose, withHandlers} from 'recompose'
 
 const StyledH1 = styled.h1`
   font-size: 36px;
+  text-align: center;
 `
-
-
 
 const DetailText = styled.h3`
   font-weight: lighter;
   color: ${props => props.theme.secondaryFontColor};
+  text-align: center;
 `
 
 const Root = styled.div`
@@ -40,13 +40,11 @@ const FormBox = styled.div`
 `
 
 const SendButton = styled.button`
-  width: 6rem;
   align-self: center;
-  height: 40px;
   background-color: ${props => props.theme.brandColor};
-  border: 1px solid white;
+  border: none;
   color: white;
-  font-size: 18px;
+  padding: 0.5rem;
   :focus{
     outline: none;
   }
@@ -64,7 +62,7 @@ let Contact = ({onSubmit}) => (
     <FormBox>
       <form>
         <StyledInput type ="text" placeholder="Enter your email" name="email"/>
-        <SendButton type="submit" onClick={(e) => onSubmit(e)}>Sign up</SendButton>
+        <SendButton type="submit" onClick={(e) => onSubmit(e)}><h5>Sign up</h5></SendButton>
       </form>
     </FormBox>
   </Root>

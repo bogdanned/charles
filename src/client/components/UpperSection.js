@@ -42,6 +42,7 @@ const Statement = styled.div`
 const SubStatement = styled.div`
   display: flex;
   flex-direction: row;
+  text-align: center;
   @media only screen and (max-width: 700px) {
     flex-direction: column;
     justify-content: center;
