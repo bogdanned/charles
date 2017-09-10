@@ -19,7 +19,8 @@ const Detail = styled.div`
   margin: 3rem;
   text-align: center;
 `
-export const DetailText = styled.h4`
+
+export const DetailText = styled.h5`
   font-weight: lighter;
   color: ${props => props.theme.secondaryFontColor};
 `

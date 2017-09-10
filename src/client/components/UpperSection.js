@@ -117,7 +117,7 @@ const UpperSection = () => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    <StyledLink to="/bot"><h4>Start</h4></StyledLink>
+    <StyledLink to="/bot"><h6>Start</h6></StyledLink>
   </Root>
   )
 
