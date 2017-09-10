@@ -24,7 +24,7 @@ const MessagesBox = styled.div`
   border-radius: 0.25rem 0.25rem 0rem 0rem;
 `
 
-const ChatMessage = styled.p`
+const ChatMessage = styled.h6`
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
   padding: 0.5rem;
@@ -32,7 +32,7 @@ const ChatMessage = styled.p`
   border-radius: 0.5rem 0.5rem 0.5rem 0;
 `
 
-const UserMessage = styled.p`
+const UserMessage = styled.h6`
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
   margin: 0.25rem;
@@ -101,6 +101,7 @@ const UserMessagesContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 1rem;
 `
 
 const Avatar = styled.img`
