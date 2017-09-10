@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {compose, withStateHandlers} from 'recompose'
+import {compose} from 'recompose'
 import { lighten } from 'polished'
+import {Link} from "react-router-dom"
 
 import Typist from './Typist'
-import ConversationBox from './ConversationBox'
 
 
 const Root = styled.div`
@@ -48,8 +48,6 @@ const LogoBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
-  padding: 1rem;
 `
 
 const LogoText = styled.div`
@@ -66,24 +64,6 @@ const Name = styled.h3`
 const Ext = styled.h3`
 `
 
-
-const Button = styled.button`
-  width: 6rem;
-  align-self: center;
-  height: 40px;
-  background-color: ${props => props.theme.brandColor};
-  border: 1px solid white;
-  color: white;
-  font-size: 18px;
-  :focus{
-    outline: none;
-  }
-  :hover{
-    background-color: ${lighten(0.05, '#27AE61')};
-  }
-  margin-bottom: 10px;
-`
-
 const Still = styled.h1`
   padding-right: 0.5rem;
   font-weight: lighter;
@@ -94,7 +74,27 @@ const Typed = styled.h1`
   font-size: 40px;
 `
 
-let UpperSection = ({isChatVisible, showChat}) => (
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  width: 6rem;
+  align-self: center;
+  height: 40px;
+  background-color: ${props => props.theme.brandColor};
+  border: 1px solid white;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :focus{
+    outline: none;
+  }
+  :hover{
+    background-color: ${lighten(0.05, '#27AE61')};
+  }
+`
+
+const UpperSection = () => (
   <Root>
     <LogoBox>
       <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
@@ -108,20 +108,9 @@ let UpperSection = ({isChatVisible, showChat}) => (
         <SubStatementText>Your personal advisor that helps you with bathroom planning and renovation</SubStatementText>
       </SubStatement>
     </StatementBox>
-    {!isChatVisible && <Button onClick={showChat}>Start</Button>}
-    {isChatVisible &&
-      <ConversationBox />
-    }
+    <StyledLink to="/bot">Start</StyledLink>
   </Root>
   )
 
 export default compose(
-  withStateHandlers(
-    () => ({
-      isChatVisible: false
-    }),
-    {
-      showChat: () => () => ({isChatVisible: true})
-    }
-  )
 )(UpperSection)

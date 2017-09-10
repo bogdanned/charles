@@ -6,6 +6,7 @@ import {Provider} from "react-redux"
 import {composeWithDevTools} from 'redux-devtools-extension'
 import { reducer as reduxFormReducer } from 'redux-form'
 import thunk from "redux-thunk"
+import {BrowserRouter as Router} from 'react-router-dom'
 
 import '../../node_modules/react-typist/dist/Typist.css'
 
@@ -35,9 +36,11 @@ const theme = {
 const renderApp = () => {
   render(
     <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <App/>
-      </Provider>
+      <Router>
+        <Provider store={store}>
+          <App/>
+        </Provider>
+      </Router>
     </ThemeProvider>
     , document.getElementById("app"))
 }

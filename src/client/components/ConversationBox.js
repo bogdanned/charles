@@ -120,13 +120,13 @@ const Conversation = ({conversation})=>{
     if(conv && conv.text){
       /* is a bot question */
       return(
-        <BotMessagesContainer>
+        <BotMessagesContainer key={conv.text}>
           <Avatar src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/p64x64/18157598_1651167781563230_8303316443347838395_n.png?oh=1317f29cc00a1254fd051e4890759e78&oe=5A5D1DAB"></Avatar>
           <ChatMessage>{conv.text}</ChatMessage>
         </BotMessagesContainer>
       )
     }else if(conv){
-      return(<UserMessagesContainer>
+      return(<UserMessagesContainer key={conv.answerText}>
         <UserMessage>{conv.answerText}</UserMessage>
       </UserMessagesContainer>)
     }

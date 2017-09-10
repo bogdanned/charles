@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Route} from 'react-router-dom'
 
-import UpperSection from './UpperSection'
-import Benefits from './Benefits'
-import Presentation from './Presentation'
-import Footer from './Footer'
-import Contact from './Contact'
+import Home from './Home'
+import ConversationBox from './ConversationBox'
 
 
 const Root = styled.div`
@@ -13,15 +11,12 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
 `
 
 export default () => (
   <Root>
-    <UpperSection />
-    <Benefits/>
-    <Presentation/>
-    <Contact/>
-    <Footer/>
+    <Home />
+    <Route exact path="/" component={Home}/>
+    <Route path="/bot" component={ConversationBox}/>
   </Root>
 )
