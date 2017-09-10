@@ -107,7 +107,7 @@ const UpperSection = () => (
   <Root>
     <LogoBox>
       <Logo src="https://image.flaticon.com/icons/svg/202/202483.svg"></Logo>
-      <LogoText><Name>Lohnbot</Name><Ext>.ai</Ext></LogoText>
+      <LogoText><Name>Charles</Name><Ext>.ai</Ext></LogoText>
     </LogoBox>
     <StatementBox>
       <Statement>
