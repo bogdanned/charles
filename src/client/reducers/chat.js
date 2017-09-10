@@ -10,7 +10,6 @@ const initialState = {
 export default function(state=initialState, action) {
   switch(action.type){
     case "STORE_MESSAGE":
-    console.log(action.payload, "paylaod")
       return {
         ...state,
         conversation: state.conversation.concat([action.payload])
