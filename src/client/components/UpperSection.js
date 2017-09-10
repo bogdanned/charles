@@ -55,6 +55,7 @@ const SubStatementText = styled.h3`
 `
 
 const LogoBox = styled.div`
+  padding: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
