@@ -19,7 +19,7 @@ const SubTitle = styled.h1`
   }
 `
 
-const DetailText = styled.h3`
+const DetailText = styled.h5`
   padding: 0 1rem 0 1rem;
   font-weight: lighter;
   color: ${props => props.theme.secondaryFontColor};
@@ -72,7 +72,7 @@ let Contact = ({onSubmit}) => (
     <FormBox>
       <form>
         <StyledInput type ="text" placeholder="Enter your email" name="email"/>
-        <SendButton type="submit" onClick={(e) => onSubmit(e)}><h5>Sign up</h5></SendButton>
+        <SendButton type="submit" onClick={(e) => onSubmit(e)}><h6>Sign up</h6></SendButton>
       </form>
     </FormBox>
   </Root>

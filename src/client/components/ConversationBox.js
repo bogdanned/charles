@@ -24,7 +24,7 @@ const MessagesBox = styled.div`
   border-radius: 0.25rem 0.25rem 0rem 0rem;
 `
 
-const ChatMessage = styled.p`
+const ChatMessage = styled.h6`
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
   padding: 0.5rem;
@@ -32,7 +32,7 @@ const ChatMessage = styled.p`
   border-radius: 0.5rem 0.5rem 0.5rem 0;
 `
 
-const UserMessage = styled.p`
+const UserMessage = styled.h6`
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.terciaryFontColor};
   margin: 0.25rem;
@@ -71,7 +71,7 @@ const ChatContainer = styled.div`
 `
 
 const ChatHeader = styled.div`
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: ${props => props.theme.brandColor};
   color: ${props => props.theme.secondaryColor};
   border-radius: 0.25rem 0.25rem 0 0;
@@ -101,6 +101,7 @@ const UserMessagesContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 1rem;
 `
 
 const Avatar = styled.img`
@@ -143,7 +144,7 @@ const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceived
   return(
     <Root>
       <ChatContainer>
-        <ChatHeader><p>Lohnbot</p></ChatHeader>
+        <ChatHeader><h6>Lohnbot</h6></ChatHeader>
         <MessagesBox>
           <Conversation conversation={conversation}></Conversation>
           <Options lastReceivedMessage={lastReceivedMessage}/>

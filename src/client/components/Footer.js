@@ -20,8 +20,9 @@ const Footer = styled.div`
   background-color: ${props => props.theme.brandColor};
 `
 
-const FooterLink = styled.div`
+const FooterLink = styled.a`
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: flex-start;
   margin: 0.5rem;
@@ -33,10 +34,10 @@ const FooterLink = styled.div`
 export default() => (
   <Footer>
     <FooterContent>
-      <FooterLink><h5><strong>Loohnbot.ai</strong></h5></FooterLink>
-      <FooterLink><h5><strong>How it works</strong></h5></FooterLink>
-      <FooterLink><h5><strong>Pricing</strong></h5></FooterLink>
-      <FooterLink><h5><strong>Contact</strong></h5></FooterLink>
+      <FooterLink><h6>Lohnbot.ai</h6></FooterLink>
+      <FooterLink><h6>How it works</h6></FooterLink>
+      <FooterLink><h6>Pricing</h6></FooterLink>
+      <FooterLink><h6>Contact</h6></FooterLink>
     </FooterContent>
   </Footer>
 )
