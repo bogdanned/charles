@@ -7,9 +7,12 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
   background-color: ${props => props.theme.secondaryColor};
-  padding: 2rem;
+  padding: 0.5rem;
+  @media only screen and (max-width: 700px) {
+      flex-direction: column;
+      justify-content: center;
+  }
 `
 
 const Detail = styled.div`

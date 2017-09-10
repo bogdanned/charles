@@ -4,6 +4,10 @@ import styled from 'styled-components'
 const FooterContent = styled.div`
   display: flex;
   flex-direction: row;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+}
 `
 
 const Footer = styled.div`
@@ -20,7 +24,7 @@ const FooterLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 5rem;
+  margin: 0.5rem;
   padding: 1rem;
   color: ${props => props.theme.secondaryColor};
   font-weight: 700;

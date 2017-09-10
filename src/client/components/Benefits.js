@@ -4,12 +4,16 @@ import styled from 'styled-components'
 const Benefits = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   margin-top: 3rem;
   margin-bottom: 3rem;
   background-color: ${props => props.theme.primaryColor};
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+}
 `
 
 const BenefitImage = styled.img`

@@ -33,11 +33,20 @@ const Statement = styled.div`
   flex-direction: row;
   text-align: center;
   justify-content: flex-start;
-  min-width: 800px;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+}
 `
 
 const SubStatement = styled.div`
   display: flex;
+  flex-direction: row;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+}
 `
 const SubStatementText = styled.h3`
   font-weight: lighter;
