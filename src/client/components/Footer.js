@@ -34,7 +34,7 @@ const FooterLink = styled.a`
 export default() => (
   <Footer>
     <FooterContent>
-      <FooterLink><h6>Lohnbot.ai</h6></FooterLink>
+      <FooterLink><h6>Charles.ai</h6></FooterLink>
       <FooterLink><h6>How it works</h6></FooterLink>
       <FooterLink><h6>Pricing</h6></FooterLink>
       <FooterLink><h6>Contact</h6></FooterLink>

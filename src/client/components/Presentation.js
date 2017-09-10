@@ -42,7 +42,7 @@ const EmailSection = styled.div`
 
 export default () => (
   <Root>
-    <StyledH1><strong>Hi, I'am Lohnbot</strong></StyledH1>
+    <StyledH1><strong>Hi, I'am Charles</strong></StyledH1>
     <Detail>
       <DetailText>Your bathroom renovation personal assistant.
         Ask me about quotes, specifications,  equipment you would like to install, and anything related with your new bathroom or bathroom renovation.
@@ -51,7 +51,7 @@ export default () => (
     </Detail>
     <EmailSection>
       <DetailText>Email me to:</DetailText>
-      <StyledEmail><strong>lohnbot@lohnbot.ai</strong></StyledEmail>
+      <StyledEmail><strong>Charles@Charles.ai</strong></StyledEmail>
     </EmailSection>
   </Root>
 )

@@ -46,7 +46,7 @@ export default () => (
     </Benefit>
     <Benefit>
       <BenefitImage src="https://image.flaticon.com/icons/svg/222/222567.svg"/>
-      <BenefitText><strong>Get quotes and answers to your doubts from LohnBot</strong></BenefitText>
+      <BenefitText><strong>Get quotes and answers to your doubts from Charles</strong></BenefitText>
     </Benefit>
   </Benefits>
 )

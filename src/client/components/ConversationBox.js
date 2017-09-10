@@ -144,7 +144,7 @@ const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceived
   return(
     <Root>
       <ChatContainer>
-        <ChatHeader><h6>Lohnbot</h6></ChatHeader>
+        <ChatHeader><h6>Charles</h6></ChatHeader>
         <MessagesBox>
           <Conversation conversation={conversation}></Conversation>
           <Options lastReceivedMessage={lastReceivedMessage}/>

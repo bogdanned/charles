@@ -66,7 +66,7 @@ const SendButton = styled.button`
 
 let Contact = ({onSubmit}) => (
   <Root>
-    <Title><strong>lohnbot.ai</strong></Title>
+    <Title><strong>Charles.ai</strong></Title>
     <SubTitle><strong>Your personal bathroom planner</strong></SubTitle>
     <DetailText>Juts tell me your bathroom doubts and concerns</DetailText>
     <FormBox>
