@@ -15,7 +15,6 @@ const Root = styled.div`
 
 export default () => (
   <Root>
-    <Home />
     <Route exact path="/" component={Home}/>
     <Route path="/bot" component={ConversationBox}/>
   </Root>
