@@ -88,13 +88,11 @@ const Typed = styled.h1`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  width: 6rem;
   align-self: center;
-  height: 40px;
   background-color: ${props => props.theme.brandColor};
   color: white;
-  font-size: 18px;
   display: flex;
+  padding: 0.5rem;
   align-items: center;
   justify-content: center;
   :focus{
