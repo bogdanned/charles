@@ -38,15 +38,15 @@ export default () => (
   <Benefits>
     <Benefit>
       <BenefitImage src="https://image.freepik.com/free-vector/bathroom-background-design_1294-83.jpg"/>
-      <BenefitText><strong>Does your bathroom need a renovation or repair?</strong></BenefitText>
+      <BenefitText><strong>Do you need advices on your career path?</strong></BenefitText>
     </Benefit>
     <Benefit>
       <BenefitImage src="https://image.flaticon.com/icons/svg/321/321817.svg"/>
-      <BenefitText><strong>Message me with your bath related doubts</strong></BenefitText>
+      <BenefitText><strong>Message me with your education related doubts</strong></BenefitText>
     </Benefit>
     <Benefit>
       <BenefitImage src="https://image.flaticon.com/icons/svg/222/222567.svg"/>
-      <BenefitText><strong>Get quotes and answers to your doubts from Charles</strong></BenefitText>
+      <BenefitText><strong>Get recomendations and answers to your doubts from Charles</strong></BenefitText>
     </Benefit>
   </Benefits>
 )
