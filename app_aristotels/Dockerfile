@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY package.json .
 RUN npm install
 
+
 COPY  .babelrc \
       .eslintrc.yml \
       webpack.config.babel.js \
@@ -16,7 +17,5 @@ COPY src ./src/
 
 EXPOSE 9001
 
-RUN eslint . && \
-    babel src -d dist
 
 CMD ["webpack-dev-server"]

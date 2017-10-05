@@ -9,7 +9,7 @@ services:
       - be
     volumes:
       - ${BASE_DIR}/app_platon/:/usr/src/app/
-  app_aristotles:
+  app_aristotels:
     build: "./app_aristotels"
     hostname: app.lokalleads.de
     ports:
