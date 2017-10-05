@@ -4,13 +4,13 @@ services:
     build: "./app_platon"
     hostname: app.platon.de
     ports:
-      - "5000:80"
+      - "5000:5000"
     networks:
       - be
     volumes:
       - ${BASE_DIR}/app_platon/:/usr/src/app/
   app_aristotles:
-    image: "app_aristotles:latest"
+    build: "./app_aristotels"
     hostname: app.lokalleads.de
     ports:
       - "9000:8000"
