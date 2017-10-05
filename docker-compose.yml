@@ -1,0 +1,23 @@
+version: "3.1"
+services:
+  app_platon:
+    image: "app_platon"
+    hostname: app.platon.de
+    ports:
+      - "5000:80"
+    networks:
+      - be
+    volumes:
+      - ${BASE_DIR}/app_platon/:/usr/src/app/
+  app_aristotles:
+    image: "app_aristotles:latest"
+    hostname: app.lokalleads.de
+    ports:
+      - "9000:8000"
+    depends_on:
+      - app_aristotles
+    volumes:
+      - ${BASE_DIR}/app_aristotles/:/usr/src/app/
+    networks:
+      - be
+      - fe
