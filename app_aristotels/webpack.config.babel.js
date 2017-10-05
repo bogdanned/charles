@@ -7,7 +7,7 @@ import CompressionWebpackPlugin from "compression-webpack-plugin"
 import AssetsPlugin from 'assets-webpack-plugin'
 
 const isDev = true,
-      host = 'localhost',
+      host = '127.0.0.1',
       port = 3000
 
 const vendor = [
@@ -47,7 +47,7 @@ export default {
   output: {
     path: path.join(__dirname, "public"),
     filename: isDev ? 'bundle-[name].js' : 'bundle-[name]-[hash].js',
-    publicPath: `http://localhost:3000/`
+    publicPath: `http://127.0.0.1:3000/`
   },
   devServer: {
     hot: true,

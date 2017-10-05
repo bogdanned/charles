@@ -8,6 +8,7 @@ export REPOSITORY=""
 export BASE_DIR=`pwd`
 
 docker swarm leave --force || /usr/bin/true
+
 docker swarm init
 
 docker-compose -f docker-compose.yml down
