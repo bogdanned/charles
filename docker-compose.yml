@@ -13,9 +13,9 @@ services:
     build: "./app_aristotels"
     hostname: app.lokalleads.de
     ports:
-      - "9000:8000"
+      - "3000:8000"
     volumes:
-      - ${BASE_DIR}/app_aristotles/:/usr/src/app/
+      - ${BASE_DIR}/app_aristotels/:/usr/src/app/
     networks:
       - be
       - fe

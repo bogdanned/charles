@@ -5,8 +5,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json .
-RUN npm install
 
+RUN npm install
 
 COPY  .babelrc \
       .eslintrc.yml \
@@ -15,7 +15,10 @@ COPY  .babelrc \
 
 COPY src ./src/
 
-EXPOSE 9001
+ENV PATH=./node_modules/.bin:$PATH \
+    NODE_ENV=development \
+    RUNTIME_ENV=dev
 
+EXPOSE 3000
 
-CMD ["webpack-dev-server"]
+RUN ["webpack-dev-server"]
