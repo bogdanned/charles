@@ -10,7 +10,6 @@ RUN npm install
 COPY  .babelrc \
       .eslintrc.yml \
       webpack.config.babel.js \
-      entrypoint.sh \
       ./
 
 COPY src ./src/
