@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   app_platon:
-    image: "app_platon"
+    build: "./app_platon"
     hostname: app.platon.de
     ports:
       - "5000:80"
@@ -14,10 +14,13 @@ services:
     hostname: app.lokalleads.de
     ports:
       - "9000:8000"
-    depends_on:
-      - app_aristotles
     volumes:
       - ${BASE_DIR}/app_aristotles/:/usr/src/app/
     networks:
       - be
       - fe
+networks:
+  fe:
+    driver: "overlay"
+  be:
+    driver: "overlay"
