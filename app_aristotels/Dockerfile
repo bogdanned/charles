@@ -11,6 +11,7 @@ RUN npm install
 COPY  .babelrc \
       .eslintrc.yml \
       webpack.config.babel.js \
+      index.html.ejs \
       ./
 
 COPY src ./src/

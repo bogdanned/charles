@@ -1,6 +1,5 @@
 FROM python:3 as base
 
-
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
