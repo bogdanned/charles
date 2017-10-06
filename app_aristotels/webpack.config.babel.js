@@ -8,7 +8,7 @@ import AssetsPlugin from 'assets-webpack-plugin'
 
 const isDev = true,
       host = '127.0.0.1',
-      port = 3000
+      port = 8000
 
 const vendor = [
   "react",
@@ -47,7 +47,7 @@ export default {
   output: {
     path: path.join(__dirname, "public"),
     filename: isDev ? 'bundle-[name].js' : 'bundle-[name]-[hash].js',
-    publicPath: `http://127.0.0.1:3000/`
+    publicPath: `http://127.0.0.1:8000/`
   },
   devServer: {
     hot: true,
