@@ -120,4 +120,5 @@ def hello():
 
 @app.route('/getAnwser', methods=['POST'])
 def get_answer():
+    print(request)
     return response(request.json['message'])
