@@ -10,4 +10,6 @@ RUN pip install -r requirements.txt
 
 ENV FLASK_APP=/app/index.py
 
-CMD ["flask","run"]
+EXPOSE 5000
+
+ENTRYPOINT ["flask","run"]

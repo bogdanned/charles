@@ -1,8 +1,13 @@
 backports.weakref==1.0.post1
 bleach==1.5.0
+click==6.7
+Flask==0.12.2
 funcsigs==1.0.2
 html5lib==0.9999999
+itsdangerous==0.24
+Jinja2==2.9.6
 Markdown==2.6.9
+MarkupSafe==1.0
 mock==2.0.0
 nltk==3.2.4
 numpy==1.13.1
