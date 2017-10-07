@@ -3,7 +3,7 @@ services:
   app_aristotels:
     build: "./app_aristotels"
     ports:
-      - "8000:8000"
+      - "3000:3000"
     volumes:
       - ${BASE_DIR}/app_aristotels/:/usr/src/app/
     networks:
