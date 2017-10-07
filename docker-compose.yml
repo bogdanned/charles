@@ -9,6 +9,15 @@ services:
     networks:
       - be
       - fe
+  app_platon:
+    build: "./app_platon"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ${BASE_DIR}/app_platon/:/usr/src/app/
+    networks:
+      - be
+      - fe
 networks:
   fe:
     driver: "overlay"
