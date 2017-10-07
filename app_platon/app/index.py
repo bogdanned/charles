@@ -5,7 +5,6 @@ from flask import Flask, jsonify, request
 # things we need for NLP
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
 
 # things we need for Tensorflow
 import numpy as np
@@ -13,9 +12,11 @@ import tflearn
 import tensorflow as tf
 import random
 
-
 # restore all of our data structures
 import pickle
+
+stemmer = LancasterStemmer()
+
 data = pickle.load( open( "training_data", "rb" ) )
 words = data['words']
 classes = data['classes']
