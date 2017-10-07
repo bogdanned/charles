@@ -14,6 +14,7 @@ import random
 
 # restore all of our data structures
 import pickle
+import json
 
 stemmer = LancasterStemmer()
 
@@ -24,7 +25,6 @@ train_x = data['train_x']
 train_y = data['train_y']
 
 # import our chat-bot intents file
-import json
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
