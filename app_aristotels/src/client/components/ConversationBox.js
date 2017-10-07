@@ -43,6 +43,10 @@ const UserMessage = styled.h6`
 
 const StyledButton = styled.button`
   border: none;
+  border: 2px ${props => props.theme.brandColor} solid;
+  width: 20%;
+  border-radius: 5px;
+  width: 20%;
   color: ${props => props.theme.primaryColor};
   background-color: transparent;
   :hover {
@@ -51,7 +55,7 @@ const StyledButton = styled.button`
 `
 
 const StyledInput = styled.input`
-  width: 95%;
+  width: 80%;
   padding: 1rem;
   :focus{
     outline: #3498db;
@@ -87,6 +91,7 @@ const ChatFooter = styled.div`
 `
 
 const StyledField = styled(Field)`
+  width: 80%;
 `
 
 const BotMessagesContainer = styled.div`
@@ -151,7 +156,7 @@ const ConvBox = ({conversation, submitting, pristine, handleSubmit, lastReceived
         </MessagesBox>
         <ChatFooter>
           <StyledField component={renderInput} name={'inputChat'}></StyledField>
-          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}></StyledButton>
+          <StyledButton type="submit" disabled={pristine || submitting} onClick={handleSubmit}>Send</StyledButton>
         </ChatFooter>
       </ChatContainer>
     </Root>
@@ -168,12 +173,12 @@ export default compose(
   })),
   lifecycle({
     componentDidMount(){
-      this.props.dispatch(actions.fetchReplyMessage({inputChat: null}))
+      this.props.dispatch(actions.fetchReplyMessage("Hey!"))
     }
   }),
   withHandlers({
     onSubmit: ({dispatch}) => (values, _dispatch, props) => {
-      dispatch(actions.fetchReplyMessage(values))
+      dispatch(actions.fetchReplyMessage(values.inputChat))
       props.reset()
     }
   }),

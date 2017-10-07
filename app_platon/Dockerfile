@@ -17,7 +17,7 @@ COPY requirements.txt \
 COPY app/ app/
 
 RUN pip install -r requirements.txt
-RUN nltk.download('punkt')
+
 ENV FLASK_APP=app/index.py
 
 EXPOSE 5000

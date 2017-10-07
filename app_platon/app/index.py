@@ -18,6 +18,9 @@ import json
 
 stemmer = LancasterStemmer()
 
+#english data
+nltk.download('punkt')
+
 data = pickle.load( open( "training_data", "rb" ) )
 words = data['words']
 classes = data['classes']
@@ -113,6 +116,12 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+
+@app.route('/getAnwser', methods=['OPTIONS'])
+def get_answer():
+    resp = make_response("hello") #here you could use make_response(render_template(...)) too
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
 
 @app.route('/getAnwser', methods=['POST'])
 def get_answer():
