@@ -22,4 +22,4 @@ ENV PATH=./node_modules/.bin:$PATH \
 
 EXPOSE 3000
 
-RUN ["webpack-dev-server"]
+ENTRYPOINT ["webpack-dev-server"]
