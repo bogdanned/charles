@@ -12,7 +12,7 @@ export default (message) => {
     dispatch(sendMessage(message))
 
     if(message){
-      dispatch(storeMessage(message.inputChat))
+      dispatch(storeMessage(message))
     }
 
 
@@ -24,14 +24,18 @@ export default (message) => {
     const reply = await fetch('http://localhost:5000/getAnwser', {
       method : 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
-      body: JSON.stringify(message)
+      mode: 'no-cors',
+      body: JSON.stringify({message})
     })
 
     console.log(reply, 'reply')
 
     const replyJson = await reply.json()
+
+    console.log(replyJson, 'reply')
 
     if(replyJson)
       dispatch(storeMessage(replyJson))
