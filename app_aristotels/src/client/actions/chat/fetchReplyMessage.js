@@ -31,15 +31,9 @@ export default (message) => {
       body: JSON.stringify({message})
     })
 
-    console.log(reply, 'reply')
+    console.log(await reply.json(), 'replyasdasd')
 
-    const replyJson = await reply.json()
 
-    console.log(replyJson, 'reply')
-
-    if(replyJson)
-      dispatch(storeMessage(replyJson))
-      dispatch(receiveMessage(replyJson))
 
   }
 }

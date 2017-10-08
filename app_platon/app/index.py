@@ -124,7 +124,7 @@ def hello():
 def get_answer():
     if request.json is not None:
         if request.json['message'] is not None:
-            return response(request.json['message'])
+            return jsonify({'message': response(request.json['message'])})
         else:
             print('request message is none')
             return ''
