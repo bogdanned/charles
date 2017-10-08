@@ -27,7 +27,7 @@ export default (message) => {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       },
-      mode: 'no-cors',
+      mode: 'cors',
       body: JSON.stringify({message})
     })
 

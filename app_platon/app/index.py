@@ -1,6 +1,6 @@
 #!flask/bin/python
 from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 
 # things we need for NLP
@@ -113,12 +113,14 @@ def response(sentence, userID='123', show_details=False):
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def hello():
     return "Hello World!"
 
 @app.route('/getAnwser', methods=['POST'])
+@cross_origin()
 def get_answer():
     if request.json is not None:
         if request.json['message'] is not None:
