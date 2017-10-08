@@ -21,7 +21,7 @@ export default (message) => {
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
-    const reply = await fetch('http://localhost:5000/getAnwser', {
+    const response = await fetch('http://localhost:5000/getAnwser', {
       method : 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,9 +31,8 @@ export default (message) => {
       body: JSON.stringify({message})
     })
 
-    console.log(await reply.json(), 'replyasdasd')
+    let reply = await response.json()
 
-
-
+    dispatch(receiveMessage(reply.message))
   }
 }
