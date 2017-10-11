@@ -1,6 +1,5 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
 
 import numpy as np
 import tflearn
@@ -10,6 +9,9 @@ import pickle
 
 # import our chat-bot intents file
 import json
+
+stemmer = LancasterStemmer()
+
 with open('./intents.json') as json_data:
     intents = json.load(json_data)
 

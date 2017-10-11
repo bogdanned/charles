@@ -114,7 +114,7 @@ def response(sentence, userID='123', show_details=False):
 
             results.pop(0)
 
-SLACK_TOKEN = os.environ('SLACK_TOKEN')
+SLACK_TOKEN = os.environ['SLACK_TOKEN']
 sc = SlackClient(SLACK_TOKEN)
 
 
@@ -125,22 +125,30 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 def jarvisResponse(channel, message):
     # sends a response
+    print(channel)
+    print(response(message))
     sc.api_call(
       "chat.postMessage",
-      channel=request.json["event"]["channel"],
-      text=mesage,
+      channel=channel,
+      text=response(message),
     )
 
 
 @app.route("/", methods=['POST'])
 def hello():
-
-    if(request.json["event"]["type"] == "message"):
+    print(request.json)
+    if "event" in request.json:
         print(request.json["event"])
-        jarvisResponse(request.json["event"]["channel"], request.json["event"]["text"])
+        if(request.json["event"]["type"] == "message"):
+            if("user" in request.json["event"]):
+                if(request.json["event"]["user"] is not "B7H3RC753"):
+                    jarvisResponse(request.json["event"]["channel"],
+                                   request.json["event"]["text"])
 
+    if "challenge" in request.json:
+        return jsonify({'challenge': request.json["challenge"]})
 
-    return jsonify({'challenge': request.json["challenge"]})
+    return jsonify({'challenge': 'test'})
 
 
 @app.route('/getAnwser', methods=['POST'])
