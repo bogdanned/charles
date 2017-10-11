@@ -115,9 +115,11 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route("/")
+@app.route("/", methods=['POST'])
 def hello():
-    return "Hello World!"
+    print(request.json)
+    return jsonify({'challenge': request.json['challenge']})
+
 
 @app.route('/getAnwser', methods=['POST'])
 @cross_origin()
