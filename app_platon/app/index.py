@@ -2,6 +2,10 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
+# Slack
+import os
+from slackclient import SlackClient
+
 
 # things we need for NLP
 import nltk
@@ -110,15 +114,33 @@ def response(sentence, userID='123', show_details=False):
 
             results.pop(0)
 
+SLACK_TOKEN = os.environ('SLACK_TOKEN')
+sc = SlackClient(SLACK_TOKEN)
+
 
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+
+def jarvisResponse(channel, message):
+    # sends a response
+    sc.api_call(
+      "chat.postMessage",
+      channel=request.json["event"]["channel"],
+      text=mesage,
+    )
+
+
 @app.route("/", methods=['POST'])
 def hello():
-    print(request.json)
-    return jsonify({'challenge': request.json['challenge']})
+
+    if(request.json["event"]["type"] == "message"):
+        print(request.json["event"])
+        jarvisResponse(request.json["event"]["channel"], request.json["event"]["text"])
+
+
+    return jsonify({'challenge': request.json["challenge"]})
 
 
 @app.route('/getAnwser', methods=['POST'])
